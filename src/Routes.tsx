@@ -1,15 +1,15 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
-// import FitPage from './pages/FitPage';
+import FitPage from './pages/FitPage';
 
 
 function Routes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Route path="/" component={LandingPage} exact/>
-      {/* <Route path="/fits" component={FitPage} /> */}
-    </BrowserRouter>
+      <Route path="/fits" component={FitPage} />
+    </HashRouter>
   )
 }
 
