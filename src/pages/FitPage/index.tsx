@@ -1,8 +1,18 @@
 import React from 'react'
 
-function FitPage (){
+import Header from '../../components/Header'
+
+function FitPage() {
   return (
-    <h1>Fit Page</h1>
+    <div id="fit">
+
+      <Header />
+
+      <h3>Refeições Fit</h3>
+      <p>Refeição individual - embalagem de 500ml</p>
+
+
+    </div>
   )
 }
 
