@@ -1,6 +1,12 @@
 #fit {
 }
 
+.content  {
+  height: 80vh;
+  width: 100vw;
+  overflow: scroll;
+}
+
 
 .top-page {
   height: 10vh;
@@ -32,7 +38,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 3rem;
-  border-bottom: 1px solid var(--color-primary);
+  border-bottom: 1px solid var(--color-secondary);
 
 }
 
@@ -98,6 +104,61 @@
 }
 
 .hot-cards .cards .card .price .full span {
+  color: var(--color-complementary);
+  font-size: 1.2rem;
+  text-decoration: line-through;
+}
+
+.horizon-card {
+  height: 13rem;
+  width: 100%;
+  border-bottom: 1px solid var(--color-secondary);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.horizon-card img {
+  height: 100%;
+  border-radius: 1rem;
+  margin-right: 1.5rem;
+}
+
+.horizon-card .right {
+  height: 100%;
+  width: 100%;
+}
+
+.horizon-card p {
+  height: 70%;
+  padding: 0.5rem;
+  text-align: justify;
+  font-size: 1.6rem;
+  overflow: hidden;
+}
+
+.horizon-card .price {
+  height: 30%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
+}
+
+.horizon-card .price .sale span{
+  color: var(--color-success);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.horizon-card .price .full span {
   color: var(--color-complementary);
   font-size: 1.2rem;
   text-decoration: line-through;
