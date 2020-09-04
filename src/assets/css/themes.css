@@ -1,0 +1,11 @@
+html[defaul-theme] {
+  --color-primary: #046d32;
+  --color-primary-light: #e2ffc596;
+  --color-primary-dark: #045828;
+  --color-secondary: #ff5700;
+  --color-secondary-dark: #f38038;
+  --color-secondary-light: #ee925c;
+  --color-complementary: #e5f4e7;
+  --color-complementary-dark: #7f8580;
+  font-size: 60%;
+}
