@@ -7,28 +7,6 @@
   overflow: scroll;
 }
 
-
-.top-page {
-  height: 10vh;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-
-  line-height: 3rem;
-  margin-bottom: 2rem;
-}
-
-.top-page .title {
-  font-size: 2.5rem;
-}
-
-
-.top-page .information {
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
 .hot-cards {
   height: 40vh;
   width: 100vw;

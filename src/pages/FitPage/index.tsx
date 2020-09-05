@@ -5,6 +5,7 @@ import './styles.css'
 import Header from '../../components/Header'
 import HotCard from '../../components/HotCard'
 import HorizonCard from '../../components/HorizonCard'
+import TopPage from '../../components/TopPage'
 
 
 function FitPage() {
@@ -13,10 +14,7 @@ function FitPage() {
 
       <Header />
 
-      <div className="top-page">
-        <h1 className="title" >Refeições Fit</h1>
-        <h3 className="information" >Refeição individual (embalagem de 500ml).</h3>
-      </div>
+      <TopPage />
 
       <div className="content">
         <div className="hot-cards">
