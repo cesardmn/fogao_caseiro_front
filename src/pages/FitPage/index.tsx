@@ -3,9 +3,8 @@ import React from 'react'
 import './styles.css'
 
 import Header from '../../components/Header'
-
-import cardImg from '../../assets/img/logo_fundo.png'
 import HotCard from '../../components/HotCard'
+import HorizonCard from '../../components/HorizonCard'
 
 
 function FitPage() {
@@ -34,125 +33,11 @@ function FitPage() {
         </div>
 
         <div className="list-cards">
-
-          <div className="horizon-card">
-
-            <img src={cardImg} alt="" />
-
-
-            <div className="right">
-              <p>
-                Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-            </p>
-
-
-              <div className="price">
-                <div className="sale">
-                  <span>R$ </span> <span>112,90</span>
-                </div>
-                <div className="full">
-                  <span>R$ </span> <span>1.1115,00</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div className="horizon-card">
-
-            <img src={cardImg} alt="" />
-
-
-            <div className="right">
-              <p>
-                Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-              </p>
-
-
-              <div className="price">
-                <div className="sale">
-                  <span>R$ </span> <span>112,90</span>
-                </div>
-                <div className="full">
-                  <span>R$ </span> <span>1.1115,00</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-          <div className="horizon-card">
-
-            <img src={cardImg} alt="" />
-
-
-            <div className="right">
-              <p>
-                Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-</p>
-
-
-              <div className="price">
-                <div className="sale">
-                  <span>R$ </span> <span>112,90</span>
-                </div>
-                <div className="full">
-                  <span>R$ </span> <span>1.1115,00</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>          <div className="horizon-card">
-
-            <img src={cardImg} alt="" />
-
-
-            <div className="right">
-              <p>
-                Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-</p>
-
-
-              <div className="price">
-                <div className="sale">
-                  <span>R$ </span> <span>112,90</span>
-                </div>
-                <div className="full">
-                  <span>R$ </span> <span>1.1115,00</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>          <div className="horizon-card">
-
-            <img src={cardImg} alt="" />
-
-
-            <div className="right">
-              <p>
-                Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-</p>
-
-
-              <div className="price">
-                <div className="sale">
-                  <span>R$ </span> <span>112,90</span>
-                </div>
-                <div className="full">
-                  <span>R$ </span> <span>1.1115,00</span>
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-
-
-
+          <HorizonCard />
+          <HorizonCard />
+          <HorizonCard />
+          <HorizonCard />
+          <HorizonCard />
         </div>
       </div>
 
