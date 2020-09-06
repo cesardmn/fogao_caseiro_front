@@ -16,7 +16,7 @@ function Header() {
         </li>
 
         <li>
-          <Link to="/combos">
+          <Link to="#combos">
             <i className="fas fa-utensils"></i>
           </Link>
         </li>
@@ -28,7 +28,7 @@ function Header() {
         </li>
 
         <li>
-          <Link to="#lowcarb">
+          <Link to="/lowcarb">
             <i className="fas fa-drumstick-bite"></i>
           </Link>
         </li>

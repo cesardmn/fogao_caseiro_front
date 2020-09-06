@@ -8,15 +8,15 @@ import TopPage from '../../components/TopPage'
 import HotCardList from '../../components/HotCardList'
 
 
-function FitPage() {
+function LowCarbPage() {
   return (
     <div id="fit">
 
       <Header />
 
       <TopPage 
-        title="Refeições Fit" 
-        information="Refeição individual (embalagem de 500ml)."
+        title="Refeições Low Carb" 
+        information="Refeição individual (embalagem de 350ml)."
       />
 
       <div className="content">
@@ -37,4 +37,4 @@ function FitPage() {
   )
 }
 
-export default FitPage
+export default LowCarbPage

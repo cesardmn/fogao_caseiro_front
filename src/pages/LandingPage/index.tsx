@@ -33,7 +33,7 @@ function LandingPage() {
           </li>
 
           <li>
-            <Link to="#">
+            <Link to="lowcarb">
               <i className="fas fa-drumstick-bite"></i>
               <span>Low Carb</span>
             </Link>
