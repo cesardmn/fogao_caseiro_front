@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './styles.css'
 
@@ -17,33 +18,33 @@ function LandingPage() {
 
       <div className="menu">
         <nav>
-        <li>
-          <a href="">
-            <i className="fas fa-utensils"></i>
-            <span>Combos</span>
-          </a>
-        </li>
+          <li>
+            <Link to="#">
+              <i className="fas fa-utensils"></i>
+              <span>Combos</span>
+            </Link>
+          </li>
 
-        <li>
-          <a href="">
-            <i className="fas fa-carrot"></i>
-            <span>Fit</span>
-          </a>
-        </li>
+          <li>
+            <Link to="/fits">
+              <i className="fas fa-carrot"></i>
+              <span>Fit</span>
+            </Link>
+          </li>
 
-        <li>
-          <a href="">
-            <i className="fas fa-drumstick-bite"></i>
-            <span>Low Carb</span>
-          </a>
-        </li>
+          <li>
+            <Link to="lowcarb">
+              <i className="fas fa-drumstick-bite"></i>
+              <span>Low Carb</span>
+            </Link>
+          </li>
 
-        <li>
-          <a href="">
-            <i className="fas fa-shopping-cart"></i>
-            <span>Pedidos</span>
-          </a>
-        </li>
+          <li>
+            <Link to="#">
+              <i className="fas fa-shopping-cart"></i>
+              <span>Pedidos</span>
+            </Link>
+          </li>
         </nav>
       </div>
     </div>

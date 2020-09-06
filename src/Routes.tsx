@@ -1,13 +1,18 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
+import FitPage from './pages/FitPage';
+import LowCarbPage from './pages/LowCarbPage';
 
 
-function Routes(){
+
+function Routes() {
   return (
-    <BrowserRouter> 
-    <Route path="/" component={LandingPage} />
-    </BrowserRouter>
+    <HashRouter>
+      <Route path="/" component={LandingPage} exact/>
+      <Route path="/fits" component={FitPage} />
+      <Route path="/lowcarb" component={LowCarbPage} />
+    </HashRouter>
   )
 }
 
