@@ -7,7 +7,9 @@ import logoImg from '../../assets/img/logo.png'
 
 
 function LandingPage() {
+  
   return (
+
     <div id="landing">
 
 
