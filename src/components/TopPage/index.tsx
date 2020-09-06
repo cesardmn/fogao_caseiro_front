@@ -6,11 +6,11 @@ interface TopPageProps {
   information: string
 }
 
-const TopPage:React.FC<TopPageProps> = (props) => {
+const TopPage: React.FC<TopPageProps> = (props) => {
   return (
     <div className="top-page">
       <h1 className="title" >{props.title}</h1>
-  <h3 className="information" >{props.information}</h3>
+      <h3 className="information" >{props.information}</h3>
     </div>
   )
 }

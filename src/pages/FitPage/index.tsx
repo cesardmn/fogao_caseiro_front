@@ -9,26 +9,30 @@ import HotCardList from '../../components/HotCardList'
 
 
 function FitPage() {
+
+  const fit = JSON.parse(localStorage.getItem("fcdb") || '{}').fit
+
   return (
     <div id="fit">
 
       <Header />
 
-      <TopPage 
-        title="Refeições Fit" 
+      <TopPage
+        title="Refeições Fit"
         information="Refeição individual (embalagem de 500ml)."
       />
 
       <div className="content">
-        
+
         <HotCardList />
 
         <div className="list-cards">
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
+
+          {
+            fit.map((item: any) => item.active &&  
+            <HorizonCard key={item.name} information={item} />)
+          }
+
         </div>
 
       </div>

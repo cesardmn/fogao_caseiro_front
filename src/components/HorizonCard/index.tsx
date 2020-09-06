@@ -2,8 +2,17 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
+interface HorizonCardProps {
+  information?: {
+    name: string,
+    price: number,
+    active: string,
+    hot: string,
+  }
+}
 
-function HorizonCard() {
+
+const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
   return (
     <div className="horizon-card">
 
@@ -11,24 +20,65 @@ function HorizonCard() {
 
 
       <div className="right">
-        <p>
-          Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz integral.
-            </p>
-
+        <h2></h2>
+        <p>{information?.name}</p>
 
         <div className="price">
-          <div className="sale">
-            <span>R$ </span> <span>112,90</span>
-          </div>
-          <div className="full">
-            <span>R$ </span> <span>1.1115,00</span>
-          </div>
+          {
+            !information?.hot &&
+            <div className="sale">
+              <span>
+                {(information?.price)?.toLocaleString(
+                  'pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }
+                )}
+              </span>
+            </div>
+          }
+
+          {
+            information?.hot &&
+            <div className="sale">
+              <span>
+                {
+                  (information?.price * 0.9)
+                    .toLocaleString(
+                      'pt-BR', {
+                      minimumFractionDigits: 2,
+                      style: 'currency',
+                      currency: 'BRL'
+                    }
+                    )
+                }
+              </span>
+            </div>
+          }
+
+          {
+            information?.hot &&
+            <div className="full">
+              <span>
+                {(information?.price)?.toLocaleString(
+                  'pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }
+                )}
+              </span>
+            </div>
+          }
+
         </div>
+
 
       </div>
 
     </div>
   )
-}
 
+}
 export default HorizonCard

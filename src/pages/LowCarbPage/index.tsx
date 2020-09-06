@@ -9,6 +9,10 @@ import HotCardList from '../../components/HotCardList'
 
 
 function LowCarbPage() {
+
+  const lowcarb = JSON.parse(localStorage.getItem("fcdb") || '{}').lowcarb
+
+
   return (
     <div id="fit">
 
@@ -24,11 +28,10 @@ function LowCarbPage() {
         <HotCardList />
 
         <div className="list-cards">
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
-          <HorizonCard />
+        {
+          lowcarb.map((item: any) => item.active &&  
+          <HorizonCard key={item.name} information={item} />)
+        }
         </div>
 
       </div>
