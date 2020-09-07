@@ -20,6 +20,10 @@
   background-color: var(--color-background-logo);
 }
 
+.card h3 {
+  margin-left: 0.5rem;
+}
+
 .card p {
   height: 30%;
   padding: 0.5rem;
