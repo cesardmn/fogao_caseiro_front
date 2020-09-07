@@ -3,7 +3,8 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
 interface HorizonCardProps {
-  information?: {
+  information: {
+    title: string,
     name: string,
     price: number,
     active: string,
@@ -20,15 +21,15 @@ const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
 
 
       <div className="right">
-        <h2></h2>
-        <p>{information?.name}</p>
+        <h2>{information.title}</h2>
+        <p>{information.name}</p>
 
         <div className="price">
           {
-            !information?.hot &&
+            !information.hot &&
             <div className="sale">
               <span>
-                {(information?.price)?.toLocaleString(
+                {(information.price).toLocaleString(
                   'pt-BR', {
                   minimumFractionDigits: 2,
                   style: 'currency',
@@ -40,11 +41,11 @@ const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
           }
 
           {
-            information?.hot &&
+            information.hot &&
             <div className="sale">
               <span>
                 {
-                  (information?.price * 0.9)
+                  (information.price * 0.9)
                     .toLocaleString(
                       'pt-BR', {
                       minimumFractionDigits: 2,
@@ -58,10 +59,10 @@ const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
           }
 
           {
-            information?.hot &&
+            information.hot &&
             <div className="full">
               <span>
-                {(information?.price)?.toLocaleString(
+                {(information.price).toLocaleString(
                   'pt-BR', {
                   minimumFractionDigits: 2,
                   style: 'currency',

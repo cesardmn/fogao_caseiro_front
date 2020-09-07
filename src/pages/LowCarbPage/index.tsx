@@ -24,7 +24,7 @@ function LowCarbPage() {
       />
 
       <div className="content">
-        
+
         <HotCardList />
 
         <div className="list-cards">

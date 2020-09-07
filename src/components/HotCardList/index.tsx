@@ -2,20 +2,35 @@ import React from 'react'
 import './styles.css'
 import HotCard from '../HotCard'
 
+
+const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
+const fits = (db.fit).filter((item: { hot: string }) => item.hot != '')
+const lowcarbs = (db.lowcarb).filter((item: { hot: string }) => item.hot != '')
+
+
 function HotCardList() {
   return (
-    <div className="hot-cards">
+      <>
+        {
+          [fits.length > 0, lowcarbs.length > 0] &&
+          <div className="hot-cards">
 
-      <h2>Destaques</h2>
-
-      <div className="cards">
-        <HotCard />
-        <HotCard />
-        <HotCard />
-        <HotCard />
-      </div>
-
-    </div>
+          <h2>Destaques</h2>
+    
+          <div className="cards">
+            {
+              fits.map((fit: { name: string, price: number, title: string }) => <HotCard key={fit.name} information={fit} />)
+            }
+    
+            {
+              lowcarbs.map((lowcarb: { name: string, price: number, title: string }) => <HotCard key={lowcarb.name} information={lowcarb} />)
+            }
+    
+          </div>
+    
+        </div>
+        }
+      </>
 
   )
 }

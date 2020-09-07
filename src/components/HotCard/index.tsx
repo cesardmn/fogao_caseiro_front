@@ -3,23 +3,57 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
 
-function HotCard() {
+interface HotCardProps {
+  information: {
+    title: string,
+    name: string,
+    price: number
+  }
+
+}
+
+const HotCard: React.FC<HotCardProps> = ({ information }) => {
   return (
     <div className="card">
 
 
       <img src={cardImg} alt="" />
 
+      <h3>{information.title}</h3>
 
-      <p>Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz  integral.</p>
+      <p>{information.name}</p>
 
 
       <div className="price">
+
         <div className="sale">
-          <span>R$ </span> <span>112,90</span>
+          <span>
+            {
+              (information.price * 0.9)
+                .toLocaleString(
+                  'pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }
+                )
+            }
+
+          </span>
         </div>
         <div className="full">
-          <span>R$ </span> <span>1.1115,00</span>
+          <span>
+            {
+              (information.price)
+                .toLocaleString(
+                  'pt-BR', {
+                  minimumFractionDigits: 2,
+                  style: 'currency',
+                  currency: 'BRL'
+                }
+                )
+            }
+          </span>
         </div>
       </div>
 
