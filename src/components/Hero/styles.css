@@ -5,11 +5,10 @@
   flex-direction: column;
   align-items: center;
 }
-
-#landing .hero img {
+.hero img {
   height: 80%;
 }
 
-#landing .hero h3 {
+.hero h3 {
   font-style: italic;
 }

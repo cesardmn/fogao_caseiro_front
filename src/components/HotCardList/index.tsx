@@ -3,12 +3,14 @@ import './styles.css'
 import HotCard from '../HotCard'
 
 
-const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
-const fits = (db.fit).filter((item: { hot: string }) => item.hot != '')
-const lowcarbs = (db.lowcarb).filter((item: { hot: string }) => item.hot != '')
 
 
 function HotCardList() {
+
+  const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
+  const fits = (db.fit).filter((item: { hot: string }) => item.hot !== '')
+  const lowcarbs = (db.lowcarb).filter((item: { hot: string }) => item.hot !== '')
+
   return (
       <>
         {
