@@ -2,21 +2,16 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles.css'
-
-import logoImg from '../../assets/img/logo.png'
+import Hero from '../../components/Hero'
 
 
 function LandingPage() {
-  
+
   return (
 
     <div id="landing">
 
-
-      <div className="hero">
-        <img src={logoImg} alt="" />
-        <h3>"Do Fogão para sua mesa!"</h3>
-      </div>
+      <Hero />
 
       <div className="menu">
         <nav>
