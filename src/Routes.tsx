@@ -6,20 +6,17 @@ import LowCarbPage from './pages/LowCarbPage';
 import ItemPage from './pages/ItemPage';
 
 
-
-
 function Routes() {
   return (
     <HashRouter >
       <Switch>
         <Route path="/" component={LandingPage} exact />
         <Route path="/fits" component={FitPage} />
-        <Route path="/lowcarb" component={LowCarbPage} />
-        <Route path="/item" component={ItemPage} />
+        <Route path="/lowcarb" component={LowCarbPage} exact/>
+        <Route path="/:item/:title" component={ItemPage} exact/>
       </Switch>
     </HashRouter>
   )
 }
-
 
 export default Routes
