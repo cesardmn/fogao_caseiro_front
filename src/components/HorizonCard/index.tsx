@@ -3,6 +3,8 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 import { Link } from 'react-router-dom'
 
+import stringToBRL from '../../utils/Utils'
+
 interface HorizonCardProps {
   information: {
     id: string,
@@ -24,58 +26,30 @@ const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
 
 
         <div className="right">
-         <h2>{information.title}</h2>
+          <h2>{information.title}</h2>
           <p>{information.name}</p>
 
           <div className="price">
             {
               !information.hot &&
               <div className="sale">
-                <span>
-                  {(information.price).toLocaleString(
-                    'pt-BR', {
-                    minimumFractionDigits: 2,
-                    style: 'currency',
-                    currency: 'BRL'
-                  }
-                  )}
-                </span>
+                <span>{stringToBRL(information.price)}</span>
               </div>
             }
 
             {
               information.hot &&
-              <div className="sale">
-                <span>
-                  {
-                    (information.price * 0.9)
-                      .toLocaleString(
-                        'pt-BR', {
-                        minimumFractionDigits: 2,
-                        style: 'currency',
-                        currency: 'BRL'
-                      }
-                      )
-                  }
-                </span>
-              </div>
-            }
+              <>
+                <div className="sale">
+                  <span>{stringToBRL(information.price * 0.9)}</span>
+                </div>
 
-            {
-              information.hot &&
-              <div className="full">
-                <span>
-                  {(information.price).toLocaleString(
-                    'pt-BR', {
-                    minimumFractionDigits: 2,
-                    style: 'currency',
-                    currency: 'BRL'
-                  }
-                  )}
-                </span>
-              </div>
+                <div className="full">
+                  <span>{stringToBRL((information.price))}</span>
+                </div>
+              </>
             }
-
+            
           </div>
 
 

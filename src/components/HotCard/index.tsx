@@ -2,6 +2,7 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
+import stringToBRL from '../../utils/Utils'
 
 interface HotCardProps {
   information: {
@@ -27,33 +28,10 @@ const HotCard: React.FC<HotCardProps> = ({ information }) => {
       <div className="price">
 
         <div className="sale">
-          <span>
-            {
-              (information.price * 0.9)
-                .toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )
-            }
-
-          </span>
+          <span>{stringToBRL((information.price * 0.9))}</span>
         </div>
         <div className="full">
-          <span>
-            {
-              (information.price)
-                .toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )
-            }
-          </span>
+        <span>{stringToBRL(information.price)}</span>
         </div>
       </div>
 
