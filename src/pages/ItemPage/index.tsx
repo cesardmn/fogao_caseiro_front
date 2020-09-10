@@ -7,21 +7,24 @@ import Header from '../../components/Header'
 
 function ItemPage() {
 
-  const uri = (window.location.href)
-    .split('/')
-    .slice(-2)
 
-  const title = uri[0]
-  const id = uri[1]
+  function getItem() {
+    const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
+    
+    const uri = (window.location.href)
+      .split('/')
+      .slice(-2)
+    const title = uri[0]
+    const id = uri[1]
 
-  const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
 
-  const item = db[title][id]
-  console.log(item);
-  
+    return db[title][id]
+    
+  }
+
+  const item =  getItem()
+
   return (
-
-
 
     <div id="item">
 
@@ -60,7 +63,7 @@ function ItemPage() {
 
           <div className="full">
             R$ {item.price}
-            </div>
+          </div>
         </div>
 
       </div>
