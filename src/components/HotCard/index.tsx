@@ -3,17 +3,25 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
 import stringToBRL from '../../utils/Utils'
+import Price from '../Price'
 
 interface HotCardProps {
   information: {
     title: string,
     name: string,
-    price: number
+    price: number,
+    hot?: string
   }
 
 }
 
 const HotCard: React.FC<HotCardProps> = ({ information }) => {
+
+  const item = {
+    price: information.price,
+    hot: information.hot
+  }
+
   return (
     <div className="card">
 
@@ -24,16 +32,7 @@ const HotCard: React.FC<HotCardProps> = ({ information }) => {
 
       <p>{information.name}</p>
 
-
-      <div className="price">
-
-        <div className="sale">
-          <span>{stringToBRL((information.price * 0.9))}</span>
-        </div>
-        <div className="full">
-        <span>{stringToBRL(information.price)}</span>
-        </div>
-      </div>
+      <Price item={item} />
 
     </div>
   )

@@ -4,6 +4,7 @@ import cardImg from '../../assets/img/logo_fundo.png'
 import { Link } from 'react-router-dom'
 
 import stringToBRL from '../../utils/Utils'
+import Price from '../Price'
 
 interface HorizonCardProps {
   information: {
@@ -18,6 +19,12 @@ interface HorizonCardProps {
 
 
 const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
+
+  const item = {
+    price: information.price,
+    hot: information.hot
+  }
+
   return (
     <Link to={`/${information.title}/${information.id}`}>
       <div className="horizon-card">
@@ -28,31 +35,8 @@ const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
         <div className="right">
           <h2>{information.title}</h2>
           <p>{information.name}</p>
-
-          <div className="price">
-            {
-              !information.hot &&
-              <div className="sale">
-                <span>{stringToBRL(information.price)}</span>
-              </div>
-            }
-
-            {
-              information.hot &&
-              <>
-                <div className="sale">
-                  <span>{stringToBRL(information.price * 0.9)}</span>
-                </div>
-
-                <div className="full">
-                  <span>{stringToBRL((information.price))}</span>
-                </div>
-              </>
-            }
-            
-          </div>
-
-
+          
+          <Price item={item}/>
         </div>
 
       </div>

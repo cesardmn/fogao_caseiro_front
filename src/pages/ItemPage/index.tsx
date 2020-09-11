@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
+
+import stringToBRL from '../../utils/Utils'
 
 
 import itemImg from '../../assets/img/logo.png'
 import Header from '../../components/Header'
+import Price from '../../components/Price'
 
 function ItemPage() {
 
 
   function getItem() {
     const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
-    
+
     const uri = (window.location.href)
       .split('/')
       .slice(-2)
@@ -19,54 +22,83 @@ function ItemPage() {
 
 
     return db[title][id]
-    
+
+  }
+  const item = getItem()
+
+
+  const [un, setUn] = useState(1)
+  const [totalItem, setTotalItem] = useState(item.hot ? item.price * 0.9 : item.price)
+
+  const price = {
+    price: item.price,
+    hot: item.hot
   }
 
-  const item =  getItem()
+  function incrementItem() {
+    if (un < 10) {
+      setUn(un + 1)
+      setTotalItem(totalItem + (item.hot ? item.price * 0.9 : item.price))
+    }
+  }
+
+  function decrementItem() {
+    if (un > 1) {
+      setUn(un - 1)
+      setTotalItem(totalItem - (item.hot ? item.price * 0.9 : item.price))
+    }
+  }
+
+
 
   return (
+
+
+
 
     <div id="item">
 
       <Header />
 
-      <div className="controls">
+      <main>
+        <h2 className="topTitle" >Detalhes do pedido</h2>
+        <img src={itemImg} alt="" />
 
-        <div className="add-buttons">
-          <button className="min">-</button>
-          <span className="display">1</span>
-          <button className="add">+</button>
+        <div className="title">
+          <h2>Refeição {item.title}</h2>
+          <Price item={item} />
         </div>
 
 
-        <button className="total-add">
-          <div className="total">R$ {item.price}</div>
-          <div className="label">Adicionar</div>
-        </button>
-
-      </div>
-
-      <div className="content">
-        <img src={itemImg} alt="" />
-
-        <h2 className="title">{item.title}</h2>
-
-        <div className="description">
+        <div className="name">
           {item.name}
         </div>
 
-        <div className="price">
+        <p className="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ad corrupti eaque facere, praesentium autem eum nobis architecto ratione laboriosam provident minus modi quam odit maiores deleniti unde ab delectus.
+        </p>
 
-          <div className="sale">
-            R$ 75,00
+      </main>
+
+      <footer>
+
+        <div className="controls">
+
+          <div className="add-buttons">
+            <button className="min" onClick={decrementItem}>-</button>
+            <span className="display" >{un}</span>
+            <button className="add" onClick={incrementItem} >+</button>
           </div>
 
-          <div className="full">
-            R$ {item.price}
-          </div>
+          <button className="total-add">
+            <div className="label">Adicionar</div>
+            <div className="total">{stringToBRL(totalItem)}</div>
+          </button>
+
+
         </div>
 
-      </div>
+      </footer>
     </div>
 
   )
