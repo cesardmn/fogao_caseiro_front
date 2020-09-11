@@ -2,17 +2,26 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
+import stringToBRL from '../../utils/Utils'
+import Price from '../Price'
 
 interface HotCardProps {
   information: {
     title: string,
     name: string,
-    price: number
+    price: number,
+    hot?: string
   }
 
 }
 
 const HotCard: React.FC<HotCardProps> = ({ information }) => {
+
+  const item = {
+    price: information.price,
+    hot: information.hot
+  }
+
   return (
     <div className="card">
 
@@ -23,39 +32,7 @@ const HotCard: React.FC<HotCardProps> = ({ information }) => {
 
       <p>{information.name}</p>
 
-
-      <div className="price">
-
-        <div className="sale">
-          <span>
-            {
-              (information.price * 0.9)
-                .toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )
-            }
-
-          </span>
-        </div>
-        <div className="full">
-          <span>
-            {
-              (information.price)
-                .toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )
-            }
-          </span>
-        </div>
-      </div>
+      <Price item={item} />
 
     </div>
   )
