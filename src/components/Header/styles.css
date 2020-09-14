@@ -22,7 +22,7 @@ header nav li {
 }
 
 header nav li i {
-  color: var(--color-secondary);
+  color: var(--color-border-bottom);
   font-size: 2rem;
   transition: 0.2s;
 }

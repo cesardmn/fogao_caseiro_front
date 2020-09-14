@@ -30,7 +30,7 @@ function FitPage() {
 
           {
             fit.map((item: any) => item.active &&  
-            <HorizonCard key={item.name} information={item} />)
+            <HorizonCard key={item.name} item={item} />)
           }
 
         </div>

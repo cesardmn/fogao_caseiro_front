@@ -2,7 +2,6 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
-import stringToBRL from '../../utils/Utils'
 import Price from '../Price'
 
 interface HotCardProps {

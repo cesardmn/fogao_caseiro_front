@@ -30,11 +30,6 @@ function ItemPage() {
   const [un, setUn] = useState(1)
   const [totalItem, setTotalItem] = useState(item.hot ? item.price * 0.9 : item.price)
 
-  const price = {
-    price: item.price,
-    hot: item.hot
-  }
-
   function incrementItem() {
     if (un < 10) {
       setUn(un + 1)
@@ -47,6 +42,20 @@ function ItemPage() {
       setUn(un - 1)
       setTotalItem(totalItem - (item.hot ? item.price * 0.9 : item.price))
     }
+  }
+
+
+  function setItemInCart(){
+    const itemCart = {
+      id: item.id,
+      type: item.type,
+      amount: un,
+      total: totalItem
+    }
+
+    console.log(itemCart);
+    
+    
   }
 
 
@@ -74,9 +83,7 @@ function ItemPage() {
           {item.name}
         </div>
 
-        <p className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores ad corrupti eaque facere, praesentium autem eum nobis architecto ratione laboriosam provident minus modi quam odit maiores deleniti unde ab delectus.
-        </p>
+ 
 
       </main>
 
@@ -90,7 +97,7 @@ function ItemPage() {
             <button className="add" onClick={incrementItem} >+</button>
           </div>
 
-          <button className="total-add">
+          <button className="total-add" onClick={setItemInCart} > 
             <div className="label">Adicionar</div>
             <div className="total">{stringToBRL(totalItem)}</div>
           </button>

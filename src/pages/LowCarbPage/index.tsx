@@ -18,8 +18,8 @@ function LowCarbPage() {
 
       <Header />
 
-      <TopPage 
-        title="Refeições Low Carb" 
+      <TopPage
+        title="Refeições Low Carb"
         information="Refeição individual (embalagem de 350ml)."
       />
 
@@ -28,10 +28,10 @@ function LowCarbPage() {
         <HotCardList />
 
         <div className="list-cards">
-        {
-          lowcarb.map((item: any) => item.active &&  
-          <HorizonCard key={item.name} information={item} />)
-        }
+          {
+            lowcarb.map((item: any) => item.active &&
+              <HorizonCard key={item.name} item={item} />)
+          }
         </div>
 
       </div>
