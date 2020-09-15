@@ -23,7 +23,7 @@ function HotCardList() {
             {
               fits.map((fit: any) =>
                 <Link key={fit.id} to={`/${fit.type}/${fit.id}`}>
-                  <HotCard key={fit.id} information={fit} />
+                  <HotCard key={fit.id} item={fit} />
                 </Link>
               )
             }
@@ -31,7 +31,7 @@ function HotCardList() {
             {
               lowcarbs.map((lowcarb: any) =>
                 <Link key={lowcarb.id} to={`/${lowcarb.type}/${lowcarb.id}`}>
-                  <HotCard key={lowcarb.id} information={lowcarb} />
+                  <HotCard key={lowcarb.id} item={lowcarb} />
                 </Link>
               )
             }
