@@ -28,35 +28,54 @@ function ItemPage() {
 
 
   const [un, setUn] = useState(1)
-  const [totalItem, setTotalItem] = useState(item.hot ? item.price * 0.9 : item.price)
+  const [totalItem, setTotalItem] = useState(item.hot ? item.sale : item.price)
 
   function incrementItem() {
     if (un < 10) {
       setUn(un + 1)
-      setTotalItem(totalItem + (item.hot ? item.price * 0.9 : item.price))
+      setTotalItem(totalItem + (item.hot ? item.sale : item.price))
     }
   }
 
   function decrementItem() {
     if (un > 1) {
       setUn(un - 1)
-      setTotalItem(totalItem - (item.hot ? item.price * 0.9 : item.price))
+      setTotalItem(totalItem - (item.hot ? item.sale : item.price))
     }
   }
 
 
-  function setItemInCart(){
-    const itemCart = {
-      id: item.id,
-      type: item.type,
-      amount: un,
-      total: totalItem
-    }
+  function setItemIntoCart() {
 
-    console.log(itemCart);
+    const ck = JSON.parse(localStorage.getItem("ck") || '[]')
+    item['amount'] = un
+
+    if (ck.length > 0) {
+      
+
+      const ckItem = ck.filter((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)[0]
+      
+
+      if (ckItem) {     
+        if (ckItem.amount !== item.amount) {
+          const ckIndex = ck.findIndex((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)
+          ck[ckIndex] = item
+          console.log(ck);
+          localStorage.setItem('ck', JSON.stringify(ck))
+        }
+      } else {
+        ck.push(item)
+        localStorage.setItem('ck', JSON.stringify(ck))
+      }
+
     
-    
-  }
+    } else{
+      
+      const cart = JSON.stringify([item])
+      localStorage.setItem('ck', cart)
+
+    }
+  }     
 
 
 
@@ -83,7 +102,7 @@ function ItemPage() {
           {item.name}
         </div>
 
- 
+
 
       </main>
 
@@ -97,7 +116,7 @@ function ItemPage() {
             <button className="add" onClick={incrementItem} >+</button>
           </div>
 
-          <button className="total-add" onClick={setItemInCart} > 
+          <button className="total-add" onClick={setItemIntoCart} >
             <div className="label">Adicionar</div>
             <div className="total">{stringToBRL(totalItem)}</div>
           </button>

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
-import stringToBRL from '../../utils/Utils';
+import React from 'react'
 import './styles.css'
 
-import { FaRegTrashAlt } from 'react-icons/fa';
 import Header from '../../components/Header';
+import CheckOutCard from '../../components/CheckOutCard';
 
 
 function CheckoutPage() {
@@ -26,13 +25,21 @@ function CheckoutPage() {
       </div>
 
       <div className="ck-list">
-        <h1>Itens do pedido</h1>
-        
 
+        {
+        items.map(
+          (item: any) => {
+            return (
+              <CheckOutCard key={item.id} item={item}/>
+            )
+          }
+        )
+        }      
       </div>
     </div>
   )
 }
+
 
 export default CheckoutPage
 

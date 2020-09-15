@@ -1,0 +1,77 @@
+.ck-card {
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid var(--color-border-bottom);
+  padding: 1rem;
+}
+
+.ck-card .left {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.ck-card .title span {
+  font-weight: normal
+}
+
+.ck-card .left .item-name {
+  font-size: 1.6rem;
+}
+
+.controls {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.add-buttons {
+  height: 6vh;
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-complementary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.add-buttons .min, .add-buttons .add {
+  height: 100%;
+  width: 33%;
+  background-color: inherit;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.add-buttons .add {
+  color: var(--color-secondary);
+  font-weight: bold;
+}
+
+.add-buttons .display {
+  font-size: 2rem;
+}
+
+.right {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.right:last-child span{
+  font-size: 1.8rem;
+  color: var(--color-secondary);
+  font-weight: bold;
+}

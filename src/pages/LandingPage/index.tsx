@@ -16,7 +16,7 @@ function LandingPage() {
       <div className="menu">
         <nav>
           <li>
-            <Link to="#">
+            <Link to="ck">
               <i className="fas fa-utensils"></i>
               <span>Combos</span>
             </Link>
