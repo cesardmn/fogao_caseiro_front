@@ -3,39 +3,38 @@ import './styles.css'
 
 import Header from '../../components/Header';
 import CheckOutCard from '../../components/CheckOutCard';
+import TopPage from '../../components/TopPage';
 
 
 function CheckoutPage() {
-  const items = JSON.parse(localStorage.getItem("ck") || '[]')
-
-  // !checkoutCart[0] && localStorage.setItem("ck", '[]') 
-
-  let sub = 0
-  items.map((item: any) => {
-    sub += item.amount * item.price
-
-  })
+  const ck = JSON.parse(localStorage.getItem("ck") || '[]')
 
   return (
     <div id="ck">
       <Header />
-      
-      <div className="top">
-        <h1>Top</h1>
+
+      <TopPage
+        title="Itens do pedidos"
+        information="Confira os itens do seu pedido"
+      />
+
+      <div className="items-cart-list">
+      {
+        ck.length > 0 ?
+          (
+            ck.map((ItemCart: any) => {
+              return (
+                <CheckOutCard key={ItemCart.id} item={ItemCart} />
+              )
+            })
+          )
+          :
+          (
+            console.log('carrinho vazio')
+          )
+      }
       </div>
 
-      <div className="ck-list">
-
-        {
-        items.map(
-          (item: any) => {
-            return (
-              <CheckOutCard key={item.id} item={item}/>
-            )
-          }
-        )
-        }      
-      </div>
     </div>
   )
 }

@@ -7,6 +7,6 @@ interface ItemProps {
     hot?: string,
     price: number,
     type: string,
-    sale: number
+    sale: number,
   }
 }

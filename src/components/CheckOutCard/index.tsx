@@ -1,49 +1,78 @@
 import React from 'react'
 import './styles.css'
 
-import { Link } from 'react-router-dom'
 
 import { FaTrashAlt } from 'react-icons/fa';
 
 
 import Price from '../Price'
+import { Link } from 'react-router-dom';
+import stringToBRL from '../../utils/Utils';
 
-const CheckOutCard: React.FC<ItemProps> = ({ item }) => {
+interface ItemCartProps {
+  item: {
+    id: number,
+    title: string,
+    name: string,
+    price: number,
+    type: string,
+    sale: number,
+    amount: number
+  }
+}
 
+const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
+
+
+  function getTotalItem() {
+    const total = item.amount && item.sale * item.amount
+    return stringToBRL(total)
+  }
+
+  function setItemIntoCard() {
+    
+  }
 
   return (
-    <Link to={`/${item.type}/${item.id}`}>
-      <div className="ck-card">
+    <div className="item-cart">
 
-        <div className="left">
-          <h2 className="title">
-            {item.title} {item.id} - <span className="item-name" >{item.name}</span>
-          </h2>
+      <Link to={`/${item.type}/${item.id}`}>
 
+        <div className="left-card">
 
-          <div className="controls">
-            <Price item={item} />
+          <h3 className="card-title">
+            {item.title} {item.id}
+          </h3>
 
-            <div className="add-buttons">
-              <button className="min">-</button>
-              <span className="display" >2</span>
-              <button className="add" >+</button>
-            </div>
+          <div className="description">
+            {item.name}
           </div>
-
-
         </div>
 
+      </Link>
 
-        <div className="right">
-
+      <div className="right-card">
+        <h4>total do item</h4>
+        <div className="total">
+          <h3>{getTotalItem()}</h3>
           <FaTrashAlt />
-          <span>R$ 30,00</span>
+        </div>
 
+        <h4>valor unitário</h4>
+        <Price item={item} />
+
+        <div className="controls">
+
+          <div className="add-buttons">
+            <button className="min">-</button>
+            <span className="display">{item.amount}</span>
+            <button className="add" >+</button>
+          </div>
         </div>
 
       </div>
-    </Link>
+
+    </div>
   )
 
 }

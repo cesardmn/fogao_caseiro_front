@@ -1,27 +1,52 @@
-.ck-card {
-  height: 20vh;
+.item-cart {
+  height: 22vh;
   width: 100%;
   display: flex;
-  border-bottom: 1px solid var(--color-border-bottom);
+  
+  border: 1px solid var(--color-complementary);
+  border-radius: 1rem;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
-.ck-card .left {
+.item-cart .left-card {
   height: 100%;
-  width: 70%;
+  width: 100%;
+  overflow-y: hidden;
+  margin-right: 1rem;
+}
+
+.item-cart .left-card .card-title {
+  font-size: 1.6em;
+  margin-bottom: 1rem;
+}
+
+.item-cart .left-card .description {
+  height: 100%;
+  font-size: 1.8rem;
+  width: 100%;
+}
+
+.item-cart .right-card {
+  height: 100%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  overflow: hidden;
 }
 
-.ck-card .title span {
-  font-weight: normal
+.item-cart .right-card .total {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1.8rem;
 }
 
-.ck-card .left .item-name {
-  font-size: 1.6rem;
+.item-cart .right-card .total h3 {
+  color: var(--color-secondary);
+  margin-right: 2rem;
 }
+
 
 .controls {
   height: 60%;
