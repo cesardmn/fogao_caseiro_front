@@ -37,7 +37,7 @@ function LandingPage() {
           </li>
 
           <li>
-            <Link to="#">
+            <Link to="pedidos">
               <i className="fas fa-shopping-cart"></i>
               <span>Pedidos</span>
             </Link>

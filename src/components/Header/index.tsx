@@ -34,7 +34,7 @@ function Header() {
         </li>
 
         <li>
-          <Link to="#pedidos">
+          <Link to="/pedidos">
             <i className="fas fa-shopping-cart"></i>
           </Link>
         </li>

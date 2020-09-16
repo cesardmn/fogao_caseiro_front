@@ -15,7 +15,7 @@ function Routes() {
         <Route path="/fits" component={FitPage} />
         <Route path="/lowcarb" component={LowCarbPage} exact/>
         <Route path="/:item/:title" component={ItemPage} exact/>
-        <Route path="/ck" component={CheckoutPage} />
+        <Route path="/pedidos" component={CheckoutPage} />
       </Switch>
     </HashRouter>
   )
