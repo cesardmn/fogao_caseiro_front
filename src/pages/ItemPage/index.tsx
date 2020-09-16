@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './styles.css'
 
-import stringToBRL from '../../utils/Utils'
+import Utils from '../../utils/Utils'
 
 
 import itemImg from '../../assets/img/logo.png'
@@ -118,7 +118,7 @@ function ItemPage() {
 
           <button className="total-add" onClick={setItemIntoCart} >
             <div className="label">Adicionar</div>
-            <div className="total">{stringToBRL(totalItem)}</div>
+            <div className="total">{Utils.numberToCurrencyBRL(totalItem)}</div>
           </button>
 
 

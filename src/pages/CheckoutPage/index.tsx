@@ -10,32 +10,35 @@ function CheckoutPage() {
   const ck = JSON.parse(localStorage.getItem("ck") || '[]')
 
   return (
-    <div id="ck">
+
+    <>
       <Header />
+      <div id="ck">
 
-      <TopPage
-        title="Itens do pedidos"
-        information="Confira os itens do seu pedido"
-      />
+        <TopPage
+          title="Itens do pedidos"
+          information="Confira os itens do seu pedido"
+        />
 
-      <div className="items-cart-list">
-      {
-        ck.length > 0 ?
-          (
-            ck.map((ItemCart: any) => {
-              return (
-                <CheckOutCard key={ItemCart.id} item={ItemCart} />
+        <div className="items-cart-list">
+          {
+            ck.length > 0 ?
+              (
+                ck.map((ItemCart: any) => {
+                  return (
+                    <CheckOutCard key={ItemCart.id} item={ItemCart} />
+                  )
+                })
               )
-            })
-          )
-          :
-          (
-            console.log('carrinho vazio')
-          )
-      }
-      </div>
+              :
+              (
+                console.log('carrinho vazio')
+              )
+          }
+        </div>
 
-    </div>
+      </div>
+    </>
   )
 }
 

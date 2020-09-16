@@ -1,5 +1,5 @@
 import React from "react"
-import stringToBRL from "../../utils/Utils"
+import Utils from "../../utils/Utils"
 
 import './styles.css'
 
@@ -10,7 +10,7 @@ const Price:React.FC<ItemProps> = ({item}) => {
       {
         !item.hot &&
         <div className="sale">
-          <span>{stringToBRL(item.sale)}</span>
+          <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
         </div>
       }
 
@@ -18,11 +18,11 @@ const Price:React.FC<ItemProps> = ({item}) => {
         item.hot &&
         <>
           <div className="sale">
-            <span>{stringToBRL(item.sale)}</span>
+            <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
           </div>
 
           <div className="full">
-            <span>{stringToBRL((item.price))}</span>
+            <span>{Utils.numberToCurrencyBRL((item.price))}</span>
           </div>
         </>
       }

@@ -7,7 +7,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 import Price from '../Price'
 import { Link } from 'react-router-dom';
-import stringToBRL from '../../utils/Utils';
+import Utils from '../../utils/Utils';
 
 interface ItemCartProps {
   item: {
@@ -26,7 +26,7 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
 
   function getTotalItem() {
     const total = item.amount && item.sale * item.amount
-    return stringToBRL(total)
+    return Utils.numberToCurrencyBRL(total)
   }
 
   function setItemIntoCard() {
