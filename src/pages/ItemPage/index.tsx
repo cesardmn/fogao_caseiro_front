@@ -7,6 +7,7 @@ import Utils from '../../utils/Utils'
 import itemImg from '../../assets/img/logo.png'
 import Header from '../../components/Header'
 import Price from '../../components/Price'
+import { Link } from 'react-router-dom'
 
 function ItemPage() {
 
@@ -18,8 +19,7 @@ function ItemPage() {
       .split('/')
       .slice(-2)
     const title = uri[0]
-    const id = uri[1]
-
+    const id = uri[1]    
 
     return db[title][id]
 
@@ -51,16 +51,15 @@ function ItemPage() {
     item['amount'] = un
 
     if (ck.length > 0) {
-      
+
 
       const ckItem = ck.filter((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)[0]
-      
 
-      if (ckItem) {     
+
+      if (ckItem) {
         if (ckItem.amount !== item.amount) {
           const ckIndex = ck.findIndex((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)
           ck[ckIndex] = item
-          console.log(ck);
           localStorage.setItem('ck', JSON.stringify(ck))
         }
       } else {
@@ -68,14 +67,14 @@ function ItemPage() {
         localStorage.setItem('ck', JSON.stringify(ck))
       }
 
-    
-    } else{
-      
+
+    } else {
+
       const cart = JSON.stringify([item])
       localStorage.setItem('ck', cart)
 
     }
-  }     
+  }
 
 
 
@@ -89,11 +88,11 @@ function ItemPage() {
       <Header />
 
       <main>
-        <h2 className="topTitle" >Detalhes do pedido</h2>
+        <h2 className="topTitle" >Detalhes do item</h2>
         <img src={itemImg} alt="" />
 
         <div className="title">
-          <h2>Refeição {item.title}</h2>
+          <h2>{item.title} {item.id}</h2>
           <Price item={item} />
         </div>
 
@@ -116,10 +115,10 @@ function ItemPage() {
             <button className="add" onClick={incrementItem} >+</button>
           </div>
 
-          <button className="total-add" onClick={setItemIntoCart} >
+          <Link to={`/${item.type}`} className="total-add" onClick={setItemIntoCart} >
             <div className="label">Adicionar</div>
             <div className="total">{Utils.numberToCurrencyBRL(totalItem)}</div>
-          </button>
+          </Link>
 
 
         </div>

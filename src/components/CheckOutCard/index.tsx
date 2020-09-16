@@ -30,13 +30,13 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
   }
 
   function setItemIntoCard() {
-    
+
   }
 
   return (
     <div className="item-cart">
 
-      <Link to={`/${item.type}/${item.id}`}>
+      <Link to={`/${item.type}/${item.id - 1}`}>
 
         <div className="left-card">
 

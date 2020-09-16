@@ -22,7 +22,7 @@ function HotCardList() {
           <div className="cards">
             {
               fits.map((fit: any) =>
-                <Link key={fit.id} to={`/${fit.type}/${fit.id}`}>
+                <Link key={fit.id} to={`/${fit.type}/${fit.id - 1}`}>
                   <HotCard key={fit.id} item={fit} />
                 </Link>
               )
@@ -30,7 +30,7 @@ function HotCardList() {
 
             {
               lowcarbs.map((lowcarb: any) =>
-                <Link key={lowcarb.id} to={`/${lowcarb.type}/${lowcarb.id}`}>
+                <Link key={lowcarb.id} to={`/${lowcarb.type}/${lowcarb.id - 1}`}>
                   <HotCard key={lowcarb.id} item={lowcarb} />
                 </Link>
               )

@@ -22,7 +22,7 @@ function Header() {
         </li>
 
         <li>
-          <Link to="/fits">
+          <Link to="/fit">
             <i className="fas fa-carrot"></i>
           </Link>
         </li>

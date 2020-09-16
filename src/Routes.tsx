@@ -12,7 +12,7 @@ function Routes() {
     <HashRouter >
       <Switch>
         <Route path="/" component={LandingPage} exact />
-        <Route path="/fits" component={FitPage} />
+        <Route path="/fit" component={FitPage} exact/>
         <Route path="/lowcarb" component={LowCarbPage} exact/>
         <Route path="/:item/:title" component={ItemPage} exact/>
         <Route path="/pedidos" component={CheckoutPage} />

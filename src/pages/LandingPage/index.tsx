@@ -23,7 +23,7 @@ function LandingPage() {
           </li>
 
           <li>
-            <Link to="/fits">
+            <Link to="/fit">
               <i className="fas fa-carrot"></i>
               <span>Fit</span>
             </Link>

@@ -3,6 +3,7 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
 import Price from '../Price'
+import Utils from '../../utils/Utils'
 
 
 const HotCard: React.FC<ItemProps> = ({ item }) => {
@@ -13,9 +14,9 @@ const HotCard: React.FC<ItemProps> = ({ item }) => {
 
       <img src={cardImg} alt="" />
 
-      <h3>{item.title}</h3>
+      <h3>{item.title} {item.id}</h3>
 
-      <p>{item.name}</p>
+      <p>{Utils.formaterDesciptionCard(item.name)}</p>
 
       <Price item={item} />
 
