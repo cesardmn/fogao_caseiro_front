@@ -13,7 +13,6 @@
   height: 100%;
   width: 100%;
   overflow-y: hidden;
-  margin-right: 1rem;
 }
 
 .item-cart .left-card .card-title {
@@ -29,9 +28,10 @@
 
 .item-cart .right-card {
   height: 100%;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  margin-left: 2rem;
 }
 
 .item-cart .right-card .total {

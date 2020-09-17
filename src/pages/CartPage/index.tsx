@@ -2,21 +2,22 @@ import React from 'react'
 import './styles.css'
 
 import Header from '../../components/Header';
-import CheckOutCard from '../../components/CheckOutCard';
+import CartCard from '../../components/CartCard';
 import TopPage from '../../components/TopPage';
+import Cart from '../../utils/Cart';
 
 
-function CheckoutPage() {
-  const ck = JSON.parse(localStorage.getItem("ck") || '[]')
+function CartPage() {
+  const ck = Cart.getCart()
 
   return (
 
     <>
       <Header />
-      <div id="ck">
+      <div id="cart">
 
         <TopPage
-          title="Itens do pedidos"
+          title="Itens do pedido"
           information="Confira os itens do seu pedido"
         />
 
@@ -24,15 +25,15 @@ function CheckoutPage() {
           {
             ck.length > 0 ?
               (
-                ck.map((ItemCart: any) => {
+                ck.map((item: ItemProps['item']) => {
                   return (
-                    <CheckOutCard key={ItemCart.id} item={ItemCart} />
+                    <CartCard key={item.id} item={item} />
                   )
                 })
               )
               :
               (
-                console.log('carrinho vazio')
+                <h1>Carrinho vazio</h1>
               )
           }
         </div>
@@ -43,5 +44,5 @@ function CheckoutPage() {
 }
 
 
-export default CheckoutPage
+export default CartPage
 

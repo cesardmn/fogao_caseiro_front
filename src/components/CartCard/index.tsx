@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './styles.css'
 
 
@@ -8,20 +8,9 @@ import { FaTrashAlt } from 'react-icons/fa';
 import Price from '../Price'
 import { Link } from 'react-router-dom';
 import Utils from '../../utils/Utils';
+import Cart from '../../utils/Cart';
 
-interface ItemCartProps {
-  item: {
-    id: number,
-    title: string,
-    name: string,
-    price: number,
-    type: string,
-    sale: number,
-    amount: number
-  }
-}
-
-const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
+const CartCard: React.FC<ItemProps> = ({ item }) => {
 
 
   function getTotalItem() {
@@ -29,9 +18,8 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
     return Utils.numberToCurrencyBRL(total)
   }
 
-  function setItemIntoCard() {
+  const [itemAmount, setItemAmount] = useState(item.amount)
 
-  }
 
   return (
     <div className="item-cart">
@@ -45,7 +33,7 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
           </h3>
 
           <div className="description">
-            {item.name}
+            {Utils.formaterDesciptionCard(item.name)}
           </div>
         </div>
 
@@ -64,9 +52,21 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
         <div className="controls">
 
           <div className="add-buttons">
-            <button className="min">-</button>
+            <button
+              className="min"
+              onClick={() => {
+                Cart.removeItemCart(item)
+                setItemAmount(item.amount - 1)
+              }}
+            >-</button>
             <span className="display">{item.amount}</span>
-            <button className="add" >+</button>
+            <button
+              className="add"
+              onClick={() => {
+                Cart.setItemIntoCart(item);
+                setItemAmount(item.amount + 1)
+              }}>+
+            </button>
           </div>
         </div>
 
@@ -76,4 +76,4 @@ const CheckOutCard: React.FC<ItemCartProps> = ({ item }) => {
   )
 
 }
-export default CheckOutCard
+export default CartCard

@@ -4,7 +4,7 @@ import LandingPage from './pages/LandingPage';
 import FitPage from './pages/FitPage';
 import LowCarbPage from './pages/LowCarbPage';
 import ItemPage from './pages/ItemPage';
-import CheckoutPage from './pages/CheckoutPage';
+import CheckoutPage from './pages/CartPage';
 
 
 function Routes() {
