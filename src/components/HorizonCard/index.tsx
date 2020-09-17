@@ -9,7 +9,7 @@ import Price from '../Price'
 
 const HorizonCard: React.FC<ItemProps> = ({ item }) => {
 
-  
+
   return (
     <Link to={`/${item.type}/${item.id - 1}`}>
       <div className="horizon-card">
@@ -22,7 +22,7 @@ const HorizonCard: React.FC<ItemProps> = ({ item }) => {
           <p>{Utils.formaterDesciptionCard(item.name)}</p>
           <div className="horizon-card-price">
           </div>
-        <Price item={item}/>
+          <Price item={item} />
         </div>
 
       </div>

@@ -8,23 +8,26 @@ const Price:React.FC<ItemProps> = ({item}) => {
   return (
     <div className="price">
       {
-        !item.hot &&
-        <div className="sale">
-          <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
-        </div>
-      }
+        item.hot ? 
+        (
+          <>
+            <div className="sale">
+              <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
+            </div>
+  
+            <div className="full">
+              <span>{Utils.numberToCurrencyBRL((item.price))}</span>
+            </div>
+          </>
+        )
+        :
+        (
 
-      {
-        item.hot &&
-        <>
           <div className="sale">
             <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
           </div>
-
-          <div className="full">
-            <span>{Utils.numberToCurrencyBRL((item.price))}</span>
-          </div>
-        </>
+       
+        )
       }
       
     </div>

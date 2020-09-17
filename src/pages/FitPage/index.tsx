@@ -6,11 +6,12 @@ import Header from '../../components/Header'
 import HorizonCard from '../../components/HorizonCard'
 import TopPage from '../../components/TopPage'
 import HotCardList from '../../components/HotCardList'
+import DB from '../../utils/DB'
 
 
 function FitPage() {
 
-  const fit = JSON.parse(localStorage.getItem("fcdb") || '{}').fit
+  const fit = DB.getItem('fit')
 
   return (
     <div id="fit">
@@ -29,8 +30,8 @@ function FitPage() {
         <div className="list-cards">
 
           {
-            fit.map((item: any) => item.active &&  
-            <HorizonCard key={item.name} item={item} />)
+            fit.map((item: ItemProps['item']) => item.active &&
+              <HorizonCard key={item.name} item={item} />)
           }
 
         </div>

@@ -2,19 +2,19 @@ import React from 'react'
 import './styles.css'
 import HotCard from '../HotCard'
 import { Link } from 'react-router-dom'
+import DB from '../../utils/DB'
 
 
 function HotCardList() {
 
-  const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
-  const fits = (db.fit).filter((item: { hot: string }) => item.hot !== '')
-  const lowcarbs = (db.lowcarb).filter((item: { hot: string }) => item.hot !== '')
+  const fits = DB.getItems('fit')
+  const lowcarbs = DB.getItems('lowcarb')
 
 
   return (
     <>
       {
-        [fits.length > 0, lowcarbs.length > 0] &&
+        [fits.length > 0 || lowcarbs.length > 0] &&
         <div className="hot-cards">
 
           <h2>Destaques</h2>
