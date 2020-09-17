@@ -1,3 +1,5 @@
+import DB from "./DB"
+
 export default class Utils {
   static numberToCurrencyBRL (value: number) {
     return value.toLocaleString(
@@ -14,6 +16,18 @@ export default class Utils {
     }else{
       return value
     }
+  }
+
+  static getLinkItem() {
+    const db = DB.getDB()
+
+    const uri = (window.location.href)
+      .split('/')
+      .slice(-2)
+    const title = uri[0]
+    const id = uri[1]
+
+    return db[title][id]
   }
 }
 
