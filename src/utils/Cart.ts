@@ -57,6 +57,13 @@ export default class Cart {
     )
   }
 
+  static deleteItemCart(item: ItemProps['item']){
+    let cart = this.getCart()
+    const indexItemCart = this.getIndexItemCart(item)
+    cart.splice(indexItemCart, 1)
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }
+
   static getIndexItemCart(item: ItemProps['item']) {
     let cart = this.getCart()
     return cart.findIndex(

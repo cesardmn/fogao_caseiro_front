@@ -43,7 +43,9 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
         <h4>total do item</h4>
         <div className="total">
           <h3>{getTotalItem()}</h3>
-          <FaTrashAlt />
+          <Link to="pedidos" onClick={() => {Cart.deleteItemCart(item)}} >
+            <FaTrashAlt />
+          </Link >
         </div>
 
         <h4>valor unitário</h4>
