@@ -8,80 +8,34 @@ import itemImg from '../../assets/img/logo.png'
 import Header from '../../components/Header'
 import Price from '../../components/Price'
 import { Link } from 'react-router-dom'
+import Cart from '../../utils/Cart'
 
 function ItemPage() {
 
-
-  function getItem() {
-    const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
-
-    const uri = (window.location.href)
-      .split('/')
-      .slice(-2)
-    const title = uri[0]
-    const id = uri[1]    
-
-    return db[title][id]
-
-  }
-  const item = getItem()
-
-
-  const [un, setUn] = useState(1)
-  const [totalItem, setTotalItem] = useState(item.hot ? item.sale : item.price)
+  const [item, SetItem] = useState(Utils.getLinkItem())
+  const [amount, setAmount] = useState(1)
+  const [totalItem, setTotalItem] = useState(item.sale)
 
   function incrementItem() {
-    if (un < 10) {
-      setUn(un + 1)
-      setTotalItem(totalItem + (item.hot ? item.sale : item.price))
+    if (amount < 10) {
+      item.amount += 1
+      SetItem(item)
+      setAmount(amount + 1)
+      setTotalItem(totalItem + item.sale)
+      
     }
   }
 
   function decrementItem() {
-    if (un > 1) {
-      setUn(un - 1)
-      setTotalItem(totalItem - (item.hot ? item.sale : item.price))
+    if (amount > 1) {
+      item.amount -= 1
+      SetItem(item)
+      setAmount(amount - 1)
+      setTotalItem(totalItem - item.sale)
     }
   }
-
-
-  function setItemIntoCart() {
-
-    const ck = JSON.parse(localStorage.getItem("ck") || '[]')
-    item['amount'] = un
-
-    if (ck.length > 0) {
-
-
-      const ckItem = ck.filter((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)[0]
-
-
-      if (ckItem) {
-        if (ckItem.amount !== item.amount) {
-          const ckIndex = ck.findIndex((cartItem: any) => cartItem.id === item.id && cartItem.type === item.type)
-          ck[ckIndex] = item
-          localStorage.setItem('ck', JSON.stringify(ck))
-        }
-      } else {
-        ck.push(item)
-        localStorage.setItem('ck', JSON.stringify(ck))
-      }
-
-
-    } else {
-
-      const cart = JSON.stringify([item])
-      localStorage.setItem('ck', cart)
-
-    }
-  }
-
-
 
   return (
-
-
-
 
     <div id="item">
 
@@ -101,8 +55,6 @@ function ItemPage() {
           {item.name}
         </div>
 
-
-
       </main>
 
       <footer>
@@ -111,15 +63,17 @@ function ItemPage() {
 
           <div className="add-buttons">
             <button className="min" onClick={decrementItem}>-</button>
-            <span className="display" >{un}</span>
+            <span className="display" >{amount}</span>
             <button className="add" onClick={incrementItem} >+</button>
           </div>
 
-          <Link to={`/${item.type}`} className="total-add" onClick={setItemIntoCart} >
+          <Link
+            to={`/${item.type}`}
+            className="total-add"
+            onClick={() => { Cart.setItemIntoCart(item) }}>
             <div className="label">Adicionar</div>
             <div className="total">{Utils.numberToCurrencyBRL(totalItem)}</div>
           </Link>
-
 
         </div>
 
