@@ -61,7 +61,7 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
                 setItemAmount(item.amount - 1)
               }}
             >-</button>
-            <span className="display">{item.amount}</span>
+            <span className="display">{itemAmount}</span>
             <button
               className="add"
               onClick={() => {
