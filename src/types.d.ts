@@ -3,10 +3,11 @@ interface ItemProps {
     id: number,
     title: string,
     name: string,
-    active?: number,
-    hot?: string,
+    active: boolean,
+    hot: boolean,
     price: number,
     type: string,
     sale: number,
+    amount: number
   }
 }
