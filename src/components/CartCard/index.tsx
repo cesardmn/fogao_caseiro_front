@@ -58,7 +58,7 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
               className="min"
               onClick={() => {
                 Cart.removeItemCart(item)
-                setItemAmount(item.amount - 1)
+                setItemAmount(item.amount)
               }}
             >-</button>
             <span className="display">{itemAmount}</span>
@@ -66,7 +66,7 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
               className="add"
               onClick={() => {
                 Cart.setItemIntoCart(item);
-                setItemAmount(item.amount + 1)
+                setItemAmount(item.amount)
               }}>+
             </button>
           </div>
