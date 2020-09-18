@@ -8,7 +8,7 @@ function Hero() {
   return (
     <div className="hero">
       <img src={logoImg} alt="" />
-      <h3>"Do Fogão para sua mesa!"</h3>
+      <h3>"Do <span>Fogão</span> para sua mesa!"</h3>
     </div>
   )
 }

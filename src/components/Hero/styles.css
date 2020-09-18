@@ -11,4 +11,9 @@
 
 .hero h3 {
   font-style: italic;
+  color: var(--color-complementary);
+  font-size: 1.5rem;
+}
+.hero h3 span {
+  color: var(--color-primary);
 }

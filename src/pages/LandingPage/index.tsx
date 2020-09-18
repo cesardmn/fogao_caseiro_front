@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 import Hero from '../../components/Hero'
 
-
 function LandingPage() {
 
   return (
@@ -13,37 +12,58 @@ function LandingPage() {
 
       <Hero />
 
-      <div className="menu">
-        <nav>
-          <li>
-            <Link to="ck">
-              <i className="fas fa-utensils"></i>
-              <span>Combos</span>
-            </Link>
-          </li>
+      <div className="description">
+        <p>
+          Aquela refeição, quentinha, na medida, para você e sua família e com um tempero caseiro que faz toda diferença.
+      </p>
 
-          <li>
-            <Link to="/fit">
+        <p>
+          E se ela for Fit ou Low Carb?
+      </p>
+
+        <p>
+          Será assim, especial! Até porque tempero caseiro sem conservantes e corantes não estraga sua alimentação.
+
+      </p>
+
+      </div>
+
+      <h2>Confira nosso cardápio</h2>
+
+      <nav>
+
+        <li>
+          <Link to="/fit">
+            <div className="menu-item">
               <i className="fas fa-carrot"></i>
               <span>Fit</span>
-            </Link>
-          </li>
+            </div>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="lowcarb">
+
+        <li>
+          <Link to="/lowcarb">
+            <div className="menu-item">
               <i className="fas fa-drumstick-bite"></i>
-              <span>Low Carb</span>
-            </Link>
-          </li>
+              <span>Low carb</span>
+            </div>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="pedidos">
-              <i className="fas fa-shopping-cart"></i>
-              <span>Pedidos</span>
-            </Link>
-          </li>
-        </nav>
-      </div>
+
+        <li>
+          <Link to="/">
+            <div className="menu-item">
+              <i className="fas fa-utensils"></i>
+              <span>Combos</span>
+            </div>
+          </Link>
+        </li>
+
+      </nav>
+
+
     </div>
   )
 }
