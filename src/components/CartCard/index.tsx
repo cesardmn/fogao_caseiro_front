@@ -9,6 +9,7 @@ import Price from '../Price'
 import { Link } from 'react-router-dom';
 import Utils from '../../utils/Utils';
 import Cart from '../../utils/Cart';
+import { IconContext } from 'react-icons/lib';
 
 const CartCard: React.FC<ItemProps> = ({ item }) => {
 
@@ -22,11 +23,11 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
 
 
   return (
-    <div className="item-cart">
+    <div className="cart-card">
 
-      <Link to={`/${item.type}/${item.id - 1}`}>
 
-        <div className="left-card">
+      <div className="left-card">
+        <Link to={`/${item.type}/${item.id - 1}`}>
 
           <h3 className="card-title">
             {item.title} {item.id}
@@ -35,43 +36,58 @@ const CartCard: React.FC<ItemProps> = ({ item }) => {
           <div className="description">
             {Utils.formaterDesciptionCard(item.name)}
           </div>
+
+        </Link>
+      </div>
+
+
+      <div className="middle-card">
+
+        <div className="total-display">
+          <h4>total do item</h4>
+
+          <h1>{getTotalItem()}</h1>
         </div>
 
-      </Link>
-
-      <div className="right-card">
-        <h4>total do item</h4>
-        <div className="total">
-          <h3>{getTotalItem()}</h3>
-          <Link to="pedidos" onClick={() => {Cart.deleteItemCart(item)}} >
-            <FaTrashAlt />
-          </Link >
+        <div className="item-display">
+          <h4>valor unitário</h4>
+          <Price item={item} />
         </div>
-
-        <h4>valor unitário</h4>
-        <Price item={item} />
 
         <div className="controls">
 
           <div className="add-buttons">
-            <button
-              className="min"
-              onClick={() => {
-                Cart.removeItemCart(item)
-                setItemAmount(item.amount)
-              }}
-            >-</button>
-            <span className="display">{itemAmount}</span>
-            <button
-              className="add"
-              onClick={() => {
-                Cart.setItemIntoCart(item);
-                setItemAmount(item.amount)
-              }}>+
+            <Link to="pedidos">
+              <button
+                className="min"
+                onClick={() => {
+                  Cart.removeItemCart(item)
+                  setItemAmount(item.amount)
+                }}>-
             </button>
+            </Link>
+            <span className="display">{itemAmount}</span>
+            <Link to="pedidos">
+              <button
+                className="add"
+                onClick={() => {
+                  Cart.setItemIntoCart(item);
+                  setItemAmount(item.amount)
+                }}>+
+            </button>
+            </Link>
           </div>
         </div>
 
+      </div>
+
+
+      <div className="right">
+        <Link to="pedidos" onClick={() => { Cart.deleteItemCart(item) }} >
+          <IconContext.Provider value={{ className: 'react-icons' }}>
+            <FaTrashAlt />
+          </IconContext.Provider>
+        </Link >
       </div>
 
     </div>

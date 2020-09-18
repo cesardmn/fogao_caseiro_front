@@ -14,8 +14,9 @@ function HotCardList() {
   return (
     <>
       {
-        [fits.length > 0 || lowcarbs.length > 0] &&
-        <div className="hot-cards">
+        fits.length > 0 || lowcarbs.length > 0 ?
+        (
+          <div className="hot-cards">
 
           <h2>Destaques</h2>
 
@@ -39,6 +40,10 @@ function HotCardList() {
           </div>
 
         </div>
+        )
+        :
+        (<></>)
+        
       }
     </>
 

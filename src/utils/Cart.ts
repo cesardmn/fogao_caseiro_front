@@ -77,5 +77,18 @@ export default class Cart {
 
   }
 
-}
+  static getTotalCart() {
+    const cart = this.getCart()
+    return cart.reduce(
+      (totalCart: number, item: ItemProps['item']) => {
+        return totalCart + item.sale * item.amount
+      },
+      0
+    )
+  }
 
+  static deleteCart() {
+    localStorage.setItem('cart', '[]')
+  }
+
+}

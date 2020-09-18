@@ -8,6 +8,8 @@
   align-items: flex-start;
   justify-content: space-between;
 
+  color: var(--color-complementary);
+
   padding: 1rem;
   margin : 1rem 0
 }
