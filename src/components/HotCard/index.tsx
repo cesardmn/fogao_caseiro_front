@@ -2,25 +2,11 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
-import stringToBRL from '../../utils/Utils'
 import Price from '../Price'
+import Utils from '../../utils/Utils'
 
-interface HotCardProps {
-  information: {
-    title: string,
-    name: string,
-    price: number,
-    hot?: string
-  }
 
-}
-
-const HotCard: React.FC<HotCardProps> = ({ information }) => {
-
-  const item = {
-    price: information.price,
-    hot: information.hot
-  }
+const HotCard: React.FC<ItemProps> = ({ item }) => {
 
   return (
     <div className="card">
@@ -28,9 +14,9 @@ const HotCard: React.FC<HotCardProps> = ({ information }) => {
 
       <img src={cardImg} alt="" />
 
-      <h3>{information.title}</h3>
+      <h3>{item.title} {item.id}</h3>
 
-      <p>{information.name}</p>
+      <p>{Utils.formaterDesciptionCard(item.name)}</p>
 
       <Price item={item} />
 

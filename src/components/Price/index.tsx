@@ -1,36 +1,33 @@
 import React from "react"
-import stringToBRL from "../../utils/Utils"
+import Utils from "../../utils/Utils"
 
 import './styles.css'
 
-interface PriceProps {
-  item: {
-  price: number,
-  hot?: string
-  }
-}
 
-const Price:React.FC<PriceProps> = ({item}) => {
+const Price:React.FC<ItemProps> = ({item}) => {
   return (
     <div className="price">
       {
-        !item.hot &&
-        <div className="sale">
-          <span>{stringToBRL(item.price)}</span>
-        </div>
-      }
+        item.hot ? 
+        (
+          <>
+            <div className="sale">
+              <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
+            </div>
+  
+            <div className="full">
+              <span>{Utils.numberToCurrencyBRL((item.price))}</span>
+            </div>
+          </>
+        )
+        :
+        (
 
-      {
-        item.hot &&
-        <>
           <div className="sale">
-            <span>{stringToBRL(item.price * 0.9)}</span>
+            <span>{Utils.numberToCurrencyBRL(item.sale)}</span>
           </div>
-
-          <div className="full">
-            <span>{stringToBRL((item.price))}</span>
-          </div>
-        </>
+       
+        )
       }
       
     </div>

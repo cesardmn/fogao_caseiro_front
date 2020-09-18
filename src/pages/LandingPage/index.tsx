@@ -16,14 +16,14 @@ function LandingPage() {
       <div className="menu">
         <nav>
           <li>
-            <Link to="#">
+            <Link to="ck">
               <i className="fas fa-utensils"></i>
               <span>Combos</span>
             </Link>
           </li>
 
           <li>
-            <Link to="/fits">
+            <Link to="/fit">
               <i className="fas fa-carrot"></i>
               <span>Fit</span>
             </Link>
@@ -37,7 +37,7 @@ function LandingPage() {
           </li>
 
           <li>
-            <Link to="#">
+            <Link to="pedidos">
               <i className="fas fa-shopping-cart"></i>
               <span>Pedidos</span>
             </Link>

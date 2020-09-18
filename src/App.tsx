@@ -17,7 +17,6 @@ function App() {
     })
   }, [])
 
-
   return isLoading ? <LoadingPage /> : <Routes />
 }
 

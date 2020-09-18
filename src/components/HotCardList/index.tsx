@@ -2,37 +2,37 @@ import React from 'react'
 import './styles.css'
 import HotCard from '../HotCard'
 import { Link } from 'react-router-dom'
-
-
+import DB from '../../utils/DB'
 
 
 function HotCardList() {
 
-  const db = JSON.parse(localStorage.getItem("fcdb") || '{}')
-  const fits = (db.fit).filter((item: { hot: string }) => item.hot !== '')
-  const lowcarbs = (db.lowcarb).filter((item: { hot: string }) => item.hot !== '')
+  const fits = DB.getItems('fit')
+  const lowcarbs = DB.getItems('lowcarb')
+
 
   return (
     <>
       {
-        [fits.length > 0, lowcarbs.length > 0] &&
-        <div className="hot-cards">
+        fits.length > 0 || lowcarbs.length > 0 ?
+        (
+          <div className="hot-cards">
 
           <h2>Destaques</h2>
 
           <div className="cards">
             {
-              fits.map((fit: { id: string, name: string, price: number, title: string }) =>
-                <Link  key={fit.id} to={`/${fit.title}/${fit.id}`}>
-                  <HotCard key={fit.id} information={fit} />
+              fits.map((fit: any) =>
+                <Link key={fit.id} to={`/${fit.type}/${fit.id - 1}`}>
+                  <HotCard key={fit.id} item={fit} />
                 </Link>
               )
             }
 
             {
-              lowcarbs.map((lowcarb: { id: string, name: string, price: number, title: string }) =>
-                <Link  key={lowcarb.id} to={`/${lowcarb.title}/${lowcarb.id}`}>
-                  <HotCard key={lowcarb.id} information={lowcarb} />
+              lowcarbs.map((lowcarb: any) =>
+                <Link key={lowcarb.id} to={`/${lowcarb.type}/${lowcarb.id - 1}`}>
+                  <HotCard key={lowcarb.id} item={lowcarb} />
                 </Link>
               )
             }
@@ -40,6 +40,10 @@ function HotCardList() {
           </div>
 
         </div>
+        )
+        :
+        (<></>)
+        
       }
     </>
 
@@ -47,3 +51,4 @@ function HotCardList() {
 }
 
 export default HotCardList
+

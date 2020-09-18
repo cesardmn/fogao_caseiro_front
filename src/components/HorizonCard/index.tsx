@@ -3,40 +3,26 @@ import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 import { Link } from 'react-router-dom'
 
-import stringToBRL from '../../utils/Utils'
+import Utils from '../../utils/Utils'
+
 import Price from '../Price'
 
-interface HorizonCardProps {
-  information: {
-    id: string,
-    title: string,
-    name: string,
-    price: number,
-    active: string,
-    hot: string,
-  }
-}
+const HorizonCard: React.FC<ItemProps> = ({ item }) => {
 
-
-const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
-
-  const item = {
-    price: information.price,
-    hot: information.hot
-  }
 
   return (
-    <Link to={`/${information.title}/${information.id}`}>
+    <Link to={`/${item.type}/${item.id - 1}`}>
       <div className="horizon-card">
 
         <img src={cardImg} alt="" />
 
 
         <div className="right">
-          <h2>{information.title}</h2>
-          <p>{information.name}</p>
-          
-          <Price item={item}/>
+          <h2>{item.title} {item.id}</h2>
+          <p>{Utils.formaterDesciptionCard(item.name)}</p>
+          <div className="horizon-card-price">
+          </div>
+          <Price item={item} />
         </div>
 
       </div>

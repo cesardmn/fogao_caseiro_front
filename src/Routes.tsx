@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import FitPage from './pages/FitPage';
 import LowCarbPage from './pages/LowCarbPage';
 import ItemPage from './pages/ItemPage';
+import CheckoutPage from './pages/CartPage';
 
 
 function Routes() {
@@ -11,9 +12,10 @@ function Routes() {
     <HashRouter >
       <Switch>
         <Route path="/" component={LandingPage} exact />
-        <Route path="/fits" component={FitPage} />
+        <Route path="/fit" component={FitPage} exact/>
         <Route path="/lowcarb" component={LowCarbPage} exact/>
         <Route path="/:item/:title" component={ItemPage} exact/>
+        <Route path="/pedidos" component={CheckoutPage} />
       </Switch>
     </HashRouter>
   )
