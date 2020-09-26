@@ -1,5 +1,5 @@
 import React from 'react'
-import {BrowserRouter, Route, Switch } from 'react-router-dom'
+import {BrowserRouter, HashRouter, Route, Switch } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
 import FitPage from './pages/FitPage';
 import LowCarbPage from './pages/LowCarbPage';
@@ -11,7 +11,7 @@ import Home from './pages/Home';
 
 function Routes() {
   return (
-    <BrowserRouter >
+    <HashRouter >
       <Switch>
       <Route path="/" component={Home} exact />
         <Route path="/app" component={LandingPage} exact />
@@ -20,7 +20,7 @@ function Routes() {
         <Route path="/:item/:title" component={ItemPage} exact/>
         <Route path="/pedidos" component={CheckoutPage} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
