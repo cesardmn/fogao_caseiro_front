@@ -2,53 +2,68 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles.css'
-
-import logoImg from '../../assets/img/logo.png'
-
+import Hero from '../../components/Hero'
 
 function LandingPage() {
-  
+
   return (
 
     <div id="landing">
 
+      <Hero />
 
-      <div className="hero">
-        <img src={logoImg} alt="" />
-        <h3>"Do Fogão para sua mesa!"</h3>
+      <div className="description">
+        <p>
+          Aquela refeição, quentinha, na medida, para você e sua família e com um tempero caseiro que faz toda diferença.
+      </p>
+
+        <p>
+          E se ela for Fit ou Low Carb?
+      </p>
+
+        <p>
+          Será assim, especial! Até porque tempero caseiro sem conservantes e corantes não estraga sua alimentação.
+
+      </p>
+
       </div>
 
-      <div className="menu">
-        <nav>
-          <li>
-            <Link to="#">
-              <i className="fas fa-utensils"></i>
-              <span>Combos</span>
-            </Link>
-          </li>
+      <h2>Confira nosso cardápio</h2>
 
-          <li>
-            <Link to="/fits">
+      <nav>
+
+        <li>
+          <Link to="/fit">
+            <div className="menu-item">
               <i className="fas fa-carrot"></i>
               <span>Fit</span>
-            </Link>
-          </li>
+            </div>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="lowcarb">
+
+        <li>
+          <Link to="/lowcarb">
+            <div className="menu-item">
               <i className="fas fa-drumstick-bite"></i>
-              <span>Low Carb</span>
-            </Link>
-          </li>
+              <span>Low carb</span>
+            </div>
+          </Link>
+        </li>
 
-          <li>
-            <Link to="#">
-              <i className="fas fa-shopping-cart"></i>
-              <span>Pedidos</span>
-            </Link>
-          </li>
-        </nav>
-      </div>
+
+        <li>
+          <Link to="/">
+            <div className="menu-item">
+              <i className="fas fa-utensils"></i>
+              <span>Combos</span>
+            </div>
+          </Link>
+        </li>
+
+      </nav>
+
+
     </div>
   )
 }

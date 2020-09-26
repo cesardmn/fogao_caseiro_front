@@ -6,8 +6,10 @@ html[defaul-theme] {
   --color-secondary-dark: #f38038;
   --color-secondary-light: #ee925c;
   --color-complementary: #6c757d;
+  --color-complementary-light: #dddedf;
   --color-complementary-dark: #7f8580;
   --color-success:#28a745;
   --color-background-logo:#e2f8e7;
+  --color-border-bottom: #ee925c;
   font-size: 60%;
 }

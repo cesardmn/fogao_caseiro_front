@@ -2,26 +2,23 @@ import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
 
+import Price from '../Price'
+import Utils from '../../utils/Utils'
 
-function HotCard() {
+
+const HotCard: React.FC<ItemProps> = ({ item }) => {
+
   return (
     <div className="card">
 
 
       <img src={cardImg} alt="" />
 
+      <h3>{item.title} {item.id}</h3>
 
-      <p>Carne louca desfiada com molho de tomate e cebola, legumes com especiarias e arroz  integral.</p>
+      <p>{Utils.formaterDesciptionCard(item.name)}</p>
 
-
-      <div className="price">
-        <div className="sale">
-          <span>R$ </span> <span>112,90</span>
-        </div>
-        <div className="full">
-          <span>R$ </span> <span>1.1115,00</span>
-        </div>
-      </div>
+      <Price item={item} />
 
     </div>
   )

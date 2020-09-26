@@ -6,11 +6,12 @@ import Header from '../../components/Header'
 import HorizonCard from '../../components/HorizonCard'
 import TopPage from '../../components/TopPage'
 import HotCardList from '../../components/HotCardList'
+import DB from '../../utils/DB'
 
 
 function LowCarbPage() {
 
-  const lowcarb = JSON.parse(localStorage.getItem("fcdb") || '{}').lowcarb
+  const lowcarb = DB.getItem('lowcarb')
 
 
   return (
@@ -18,20 +19,20 @@ function LowCarbPage() {
 
       <Header />
 
-      <TopPage 
-        title="Refeições Low Carb" 
+      <TopPage
+        title="Refeições Low Carb"
         information="Refeição individual (embalagem de 350ml)."
       />
 
       <div className="content">
-        
+
         <HotCardList />
 
         <div className="list-cards">
-        {
-          lowcarb.map((item: any) => item.active &&  
-          <HorizonCard key={item.name} information={item} />)
-        }
+          {
+            lowcarb.map((item: ItemProps['item']) => item.active &&
+              <HorizonCard key={item.name} item={item} />)
+          }
         </div>
 
       </div>

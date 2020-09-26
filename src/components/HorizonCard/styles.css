@@ -1,15 +1,17 @@
 .horizon-card {
   height: 13rem;
   width: 100%;
-  border-bottom: 1px solid var(--color-secondary);
+  border: 1px solid var(--color-complementary-light);
+  border-radius: 0.5rem;
 
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 
-  padding: 1rem;
+  color: var(--color-complementary);
 
-  margin-bottom: 2rem;
+  padding: 1rem;
+  margin : 1rem 0
 }
 
 .horizon-card img {
@@ -21,35 +23,17 @@
 .horizon-card .right {
   height: 100%;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .horizon-card p {
   height: 70%;
   padding: 0.5rem;
-  text-align: justify;
+  text-align: left;
   font-size: 1.7rem;
   overflow: hidden;
-}
-
-.horizon-card .price {
-  height: 30%;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
-}
-
-.horizon-card .price .sale span{
-  color: var(--color-success);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.horizon-card .price .full span {
-  color: var(--color-complementary);
-  font-size: 1.2rem;
-  text-decoration: line-through;
-  margin-left: 1rem;
+  margin-bottom: 1rem;
 }

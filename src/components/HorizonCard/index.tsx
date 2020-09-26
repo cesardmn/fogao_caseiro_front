@@ -1,83 +1,32 @@
 import React from 'react'
 import './styles.css'
 import cardImg from '../../assets/img/logo_fundo.png'
+import { Link } from 'react-router-dom'
 
-interface HorizonCardProps {
-  information?: {
-    name: string,
-    price: number,
-    active: string,
-    hot: string,
-  }
-}
+import Utils from '../../utils/Utils'
+
+import Price from '../Price'
+
+const HorizonCard: React.FC<ItemProps> = ({ item }) => {
 
 
-const HorizonCard: React.FC<HorizonCardProps> = ({ information }) => {
   return (
-    <div className="horizon-card">
+    <Link to={`/${item.type}/${item.id - 1}`}>
+      <div className="horizon-card">
 
-      <img src={cardImg} alt="" />
+        <img src={cardImg} alt="" />
 
 
-      <div className="right">
-        <h2></h2>
-        <p>{information?.name}</p>
-
-        <div className="price">
-          {
-            !information?.hot &&
-            <div className="sale">
-              <span>
-                {(information?.price)?.toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )}
-              </span>
-            </div>
-          }
-
-          {
-            information?.hot &&
-            <div className="sale">
-              <span>
-                {
-                  (information?.price * 0.9)
-                    .toLocaleString(
-                      'pt-BR', {
-                      minimumFractionDigits: 2,
-                      style: 'currency',
-                      currency: 'BRL'
-                    }
-                    )
-                }
-              </span>
-            </div>
-          }
-
-          {
-            information?.hot &&
-            <div className="full">
-              <span>
-                {(information?.price)?.toLocaleString(
-                  'pt-BR', {
-                  minimumFractionDigits: 2,
-                  style: 'currency',
-                  currency: 'BRL'
-                }
-                )}
-              </span>
-            </div>
-          }
-
+        <div className="right">
+          <h2>{item.title} {item.id}</h2>
+          <p>{Utils.formaterDesciptionCard(item.name)}</p>
+          <div className="horizon-card-price">
+          </div>
+          <Price item={item} />
         </div>
 
-
       </div>
-
-    </div>
+    </Link>
   )
 
 }
