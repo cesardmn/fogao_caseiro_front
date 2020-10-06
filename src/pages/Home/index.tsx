@@ -1,5 +1,4 @@
 import React from 'react'
-import Hero from '../../components/Hero'
 
 import './styles.css'
 
@@ -7,8 +6,6 @@ function HomePage() {
   return (
 
     <div id="home-page">
-
-      <Hero />
 
       <div className="description">
         <p>
