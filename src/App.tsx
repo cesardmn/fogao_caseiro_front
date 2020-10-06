@@ -7,15 +7,15 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(true)
 
-  useEffect(() => {
-    api.get('').then(response => {
-      const fcdb = JSON.stringify(response.data)
-      localStorage.setItem("fcdb", fcdb)
+  // useEffect(() => {
+  //   api.get('').then(response => {
+  //     const fcdb = JSON.stringify(response.data)
+  //     localStorage.setItem("fcdb", fcdb)
 
-      setIsLoading(false)
+  //     setIsLoading(false)
 
-    })
-  }, [])
+  //   })
+  // }, [])
 
   return isLoading ? <LoadingPage /> : <Routes />
 }
