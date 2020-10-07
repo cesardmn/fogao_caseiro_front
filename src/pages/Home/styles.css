@@ -38,12 +38,10 @@
 
 #home-page .content .card {
   height: 55vh;
-  /* width: 100%; */
   max-width: 300px;
   margin: 1rem 2rem;
   background-color: #fff;
   border-radius: 2rem;
-  /* padding: 2rem; */
   align-items: center;
   justify-content: space-evenly;
   line-height: 2.5rem;

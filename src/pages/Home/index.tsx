@@ -7,6 +7,7 @@ import './styles.css'
 import comboImg from '../../assets/img/combo.png'
 import fitImg from '../../assets/img/fit.png'
 import lowcarbImg from '../../assets/img/lowcarb.png'
+import { Link } from 'react-router-dom'
 
 function HomePage() {
 
@@ -33,23 +34,27 @@ function HomePage() {
         </div>
 
 
-        <div className="card" id="combo">
+        <Link to="/combo">
+          <div className="card" id="combo">
 
-          <div className="top">
-            <div className="icon-container">
-              <FaUtensils />
+            <div className="top">
+              <div className="icon-container">
+                <FaUtensils />
+              </div>
+              <div>
+                <strong>combo caseiro</strong>
+                <p>{combo.content[1]}</p>
+              </div>
             </div>
-            <strong>combo caseiro</strong>
+
+            <img src={comboImg} alt="combo caseiro" />
+
+            <div className="bottom">
+              <p>{combo.content[0]}</p>
+            </div>
+
           </div>
-
-          <img src={comboImg} alt="combo caseiro" />
-
-          <div className="bottom">
-            <p>{combo.content[0]}</p>
-            <p>{combo.content[1]}</p>
-          </div>
-
-        </div>
+        </Link>
 
 
         <div className="card" id="fit">
@@ -58,14 +63,17 @@ function HomePage() {
             <div className="icon-container">
               <FaCarrot />
             </div>
-            <strong>marmita fit</strong>
+            <div>
+              <strong>marmita fit</strong>
+              <p>{fit.content[1]}</p>
+            </div>
           </div>
 
           <img src={fitImg} alt="marmita fit" />
 
           <div className="bottom">
             <p>{fit.content[0]}</p>
-            <p>{fit.content[1]}</p>
+            <p>mínimo de 5 unidades, Fit e/ou Lowcarb</p>
           </div>
 
         </div>
@@ -77,14 +85,17 @@ function HomePage() {
             <div className="icon-container">
               <FaDrumstickBite />
             </div>
-            <strong>marmita lowcarb</strong>
+            <div>
+              <strong>marmita low carb</strong>
+              <p>{lowcarb.content[1]}</p>
+            </div>
           </div>
 
           <img src={lowcarbImg} alt="marmita lowcarb" />
 
           <div className="bottom">
             <p>{lowcarb.content[0]}</p>
-            <p>{lowcarb.content[1]}</p>
+            <p>mínimo de 5 unidades, Fit e/ou Lowcarb</p>
           </div>
 
         </div>
