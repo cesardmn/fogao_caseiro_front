@@ -7,9 +7,10 @@ import { FaInstagram, FaShoppingCart, FaWhatsapp } from 'react-icons/fa';
 import DB from '../../utils/DB';
 
 
-const info = DB.getItem('info')
-
 function Header() {
+
+  const info = DB.getItem('info')
+
   return (
     <div id="header">
 
@@ -23,7 +24,7 @@ function Header() {
 
         <div className="social-container">
 
-          <a href="https://wa.me/552199999999">
+          <a href="https://wa.me/5521999374814">
             <div className="social-item">
               <FaWhatsapp />
               <strong>{info.contact[0]}</strong>
@@ -48,7 +49,6 @@ function Header() {
 
         <div className="middle">
           <h2>{info.about[0]}</h2>
-
           <h2>{info.about[1]}</h2>
         </div>
 
@@ -57,6 +57,7 @@ function Header() {
           <div className="info-item">
             <span>Encomendas</span>
             <p>{info.order[0]}</p>
+            <p>{info.order[1]}</p>
           </div>
 
           <div className="info-item">
@@ -67,36 +68,6 @@ function Header() {
         </div>
 
       </div>
-
-      <nav>
-        <ul>
-            <a href="#">
-          <li className="menu-item">
-              sobre nós
-          </li>
-            </a>
-
-          <li className="menu-item">
-            <a href="">
-              combo caseiro
-            </a>
-          </li>
-
-          <li className="menu-item">
-            <a href="">
-              marmita fit
-            </a>
-          </li>
-
-          <li className="menu-item">
-            <a href="">
-              marmita low carb
-            </a>
-          </li>
-
-        </ul>
-      </nav>
-
     </div>
   )
 }
