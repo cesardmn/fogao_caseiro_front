@@ -11,3 +11,17 @@ interface ItemProps {
     amount: number
   }
 }
+
+
+interface ComboProps {
+  item: {
+    acompanhamento: number,
+    active: boolean,
+    carne: number,
+    frango: number,
+    id: number,
+    massa: number,
+    peixe: number,
+    title: string,
+  }
+}
