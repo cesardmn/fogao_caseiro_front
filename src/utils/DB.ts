@@ -14,5 +14,11 @@ export default class DB{
     const db = this.getDB()
     return db[item]
   }
+
+  static getCombos() {
+    const db = this.getDB()
+    const dbItem = db['combos']
+    return dbItem.filter((item: ComboProps['item']) => item.active === true )
+  }
 }
 
