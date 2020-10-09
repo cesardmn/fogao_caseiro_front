@@ -1,5 +1,4 @@
 interface ItemProps {
-  item: {
     id: number,
     title: string,
     name: string,
@@ -8,13 +7,11 @@ interface ItemProps {
     price: number,
     type: string,
     sale: number,
-    amount: number
-  }
+    amount: numbe,
 }
 
 
 interface ComboProps {
-  item: {
     acompanhamento: number,
     active: boolean,
     carne: number,
@@ -23,5 +20,11 @@ interface ComboProps {
     massa: number,
     peixe: number,
     title: string,
-  }
+}
+
+
+interface CardProps {
+    type: string,
+    title: string,
+    subtitle: string,
 }

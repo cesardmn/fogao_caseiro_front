@@ -11,7 +11,7 @@ export default class Cart {
     return cart
   }
 
-  static setItemIntoCart(item: ItemProps['item']) {
+  static setItemIntoCart(item: ItemProps) {
 
     let cart = this.getCart()
 
@@ -32,7 +32,7 @@ export default class Cart {
   }
 
 
-  static removeItemCart (item: ItemProps['item']){
+  static removeItemCart (item: ItemProps){
     let cart = this.getCart()
     const indexItemCart = this.getIndexItemCart(item)
     
@@ -44,7 +44,7 @@ export default class Cart {
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 
-  static getItemCart(item: ItemProps['item']) {
+  static getItemCart(item: ItemProps) {
     let cart = this.getCart()
     return cart.filter(
       (includeItem: { id: number; type: string }) => {
@@ -57,14 +57,14 @@ export default class Cart {
     )
   }
 
-  static deleteItemCart(item: ItemProps['item']){
+  static deleteItemCart(item: ItemProps){
     let cart = this.getCart()
     const indexItemCart = this.getIndexItemCart(item)
     cart.splice(indexItemCart, 1)
     localStorage.setItem('cart', JSON.stringify(cart))
   }
 
-  static getIndexItemCart(item: ItemProps['item']) {
+  static getIndexItemCart(item: ItemProps) {
     let cart = this.getCart()
     return cart.findIndex(
       (includeItem: { id: number; type: string }) => {
@@ -80,7 +80,7 @@ export default class Cart {
   static getTotalCart() {
     const cart = this.getCart()
     return cart.reduce(
-      (totalCart: number, item: ItemProps['item']) => {
+      (totalCart: number, item: ItemProps) => {
         return totalCart + item.sale * item.amount
       },
       0

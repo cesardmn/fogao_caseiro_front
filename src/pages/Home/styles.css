@@ -36,65 +36,6 @@
   box-shadow: var(--box-shadow-black);
 }
 
-#home-page .content .card {
-  height: 55vh;
-  max-width: 300px;
-  margin: 1rem 2rem;
-  background-color: #fff;
-  border-radius: 2rem;
-  align-items: center;
-  justify-content: space-evenly;
-  line-height: 2.5rem;
-  color: var(--color-complementary);
-  box-shadow: var(--box-shadow-black);
-  overflow: hidden;
-}
-
-#home-page .content .card .top {
-  height: 15vh;
-  width: 100%;
-  flex-direction: row;
-  overflow: hidden;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 0 2rem;
-}
-
-#home-page .content .card .top .icon-container {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  align-items: center;
-  justify-content: center;
-  margin-right: 2rem;
-  background-color: var(--color-primary-light);
-  color: var(--color-secondary-light);
-  font-size: 2rem;
-  box-shadow: var(--box-shadow-green)
-}
-
-#home-page .content .card .top strong {
-  font-size: 2rem;
-  color: var(--color-primary);
-}
-
-#home-page .content .card img {
-  height: 20vh;
-  width: 100%;
-  object-fit: cover;
-}
-
-#home-page .content .card .bottom {
-  height: 30vh;
-  padding: 2rem;
-  font-size: 1.4rem;
-  line-height: 1.7rem;
-}
-
-#home-page .content .card .bottom p {
-  margin-bottom: 1rem;
-}
-
 @media(min-width:700px) {
   #home-page .content {
     margin-top: 3rem;
