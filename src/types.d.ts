@@ -42,5 +42,9 @@ interface ChoiceListProps {
     title: string,
     amount: number,
     options?: [OptionProps],
-    items?: string,
+    items?: [ItemProps],
+}
+
+interface ChoiceItemProps {
+    item: OptionProps | ItemProps
 }

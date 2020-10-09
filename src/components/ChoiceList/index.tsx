@@ -1,5 +1,5 @@
 import React from 'react'
-import Utils from '../../utils/Utils'
+import ChoiceItem from '../ChoiceItem'
 
 import './styles.css'
 
@@ -22,7 +22,6 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ title, amount, options, items }
       </div>
 
 
-
       <ul className="porcao-list">
 
         {
@@ -31,24 +30,21 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ title, amount, options, items }
 
           options.map((option: OptionProps) => {
             return (
-              <li key={option.id}>
-                <div className="option-card">
-                  <div className="card-description">
-                    <h3>{option.name}</h3>
-                    <p>{Utils.numberToCurrencyBRL(option.sale)}</p>
-                  </div>
-
-                  <div className="card-controls">
-                    <button>-</button>
-                    <span>0</span>
-                    <button>+</button>
-                  </div>
-                </div>
-              </li>
+              <ChoiceItem item={option} />
             )
           })
         }
 
+        {
+
+          items &&
+
+          items.map((item: ItemProps) => {
+            return (
+              <ChoiceItem item={item} />
+            )
+          })
+        }
 
       </ul>
 

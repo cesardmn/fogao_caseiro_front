@@ -29,29 +29,3 @@
   width: 100%;
   padding-left: 0;
 }
-
-
-.porcao-option .porcao-list .option-card {
-  height: 10vh;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  color: var(--color-complementary-dark);
-  border-bottom: 1px solid var(--color-complementary-light);
-}
-
-.porcao-option .porcao-list .option-card p {
-  margin-top: 0.5rem;
-}
-
-.porcao-option .porcao-list .option-card .card-controls {
-  height: 50px;
-  width: 100px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-
-  border: 1px solid var(--color-complementary-light);
-  border-radius: 0.5rem;
-}
