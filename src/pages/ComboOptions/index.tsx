@@ -1,4 +1,5 @@
 import React from 'react'
+import ChoiceList from '../../components/ChoiceList';
 import Header from '../../components/Header';
 import DB from '../../utils/DB';
 import Utils from '../../utils/Utils';
@@ -13,9 +14,6 @@ const ComboOptions = () => {
   const frangos = DB.getItem('frangos')
   const massas = DB.getItem('massas')
   const peixes = DB.getItem('peixes')
-
-  console.log(peixes);
-
 
   return (
 
@@ -33,59 +31,56 @@ const ComboOptions = () => {
 
       <div className="content">
 
-        <div className="porcao-option">
+        {
+          combo.acompanhamento &&
 
-          <div className="option-header">
+          < ChoiceList
+            title={'Acompanhamentos'}
+            amount={combo.acompanhamento}
+            options={acompanhamentos}
+          />
+        }
 
-            <div className="display">
-              <h2>Acomapanhamento:</h2>
-              <p>escolha {combo.acompanhamento} opções </p>
-            </div>
+        {
+          combo.carne &&
 
-            <div className="option-counter">
-              <div className="count">0/{combo.acompanhamento}</div>
-              <div className="count">obrigatório</div>
-            </div>
+          < ChoiceList
+            title={'Carnes'}
+            amount={combo.carne}
+            options={carnes}
+          />
+        }
 
-          </div>
+        {
+          combo.frango &&
 
+          < ChoiceList
+            title={'Frangos'}
+            amount={combo.frango}
+            options={frangos}
+          />
+        }
 
+        {
+          combo.massa &&
 
-          <ul className="porcao-list">
+          < ChoiceList
+            title={'Massas'}
+            amount={combo.massa}
+            options={massas}
+          />
+        }
 
-            {
-              acompanhamentos.map((option: OptionProps) => {
-                return (
-                  <li key={option.id}>
-                    <div className="option-card">
-                      <div className="card-description">
-                        <h3>{option.name}</h3>
-                        <p>{Utils.numberToCurrencyBRL(option.sale)}</p>
-                      </div>
+        {
+          combo.peixe &&
 
-                      <div className="card-controls">
-                        <button>-</button>
-                        <span>0</span>
-                        <button>+</button>
-                      </div>
-                    </div>
-                  </li>
-                )
-              })
-            }
+          < ChoiceList
+            title={'Peixes'}
+            amount={combo.peixe}
+            options={peixes}
+          />
+        }
 
-
-          </ul>
-
-        </div>
-
-
-
-
-
-
-
-        
 
       </div>
 

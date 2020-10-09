@@ -37,3 +37,10 @@ interface OptionProps {
     price: number
     sale: number
 }
+
+interface ChoiceListProps {
+    title: string,
+    amount: number,
+    options?: [OptionProps],
+    items?: string,
+}
