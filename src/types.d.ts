@@ -28,3 +28,12 @@ interface CardProps {
     title: string,
     subtitle: string,
 }
+
+interface OptionProps {
+    active: boolean
+    hot: boolean
+    id: number
+    name: string
+    price: number
+    sale: number
+}

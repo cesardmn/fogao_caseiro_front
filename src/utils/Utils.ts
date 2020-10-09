@@ -29,5 +29,12 @@ export default class Utils {
 
     return db[title][id]
   }
+
+  static getCombo(){
+    const comboId = Number((window.location.href)
+    .split('/')
+    .slice(-2)[1])
+    return DB.getItem('combos')[comboId -1]
+  }
 }
 
