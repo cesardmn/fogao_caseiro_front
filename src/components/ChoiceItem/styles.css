@@ -1,18 +1,42 @@
-.option-card {
+.item-card {
   height: 10vh;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   color: var(--color-complementary-dark);
   border-bottom: 1px solid var(--color-complementary-light);
 }
 
-.option-card p {
-  margin-top: 0.5rem;
+.item-card .card-description {
+  height: 100%;
+  width: 70%;
+  margin-right: 1rem;
+  justify-content: space-evenly;
 }
 
-.option-card .card-controls {
+
+.item-card .card-description .name {
+  font-size: 1.3rem;
+}
+
+.item-card .card-description .price {
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.item-card .card-description .price .sale {
+  font-size: 1.3rem;
+  color: var(--color-success);
+  margin-right: 0.5rem;
+}
+
+.item-card .card-description .price .full {
+  text-decoration: line-through;
+}
+
+
+.item-card .card-controls {
   height: 50px;
   width: 100px;
   flex-direction: row;

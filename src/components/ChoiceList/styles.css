@@ -1,4 +1,7 @@
-
+.porcao-option {
+  width: 100vw;
+  margin-top: 5rem;
+}
 
 .porcao-option .option-header {
   height: 10vh;
@@ -28,4 +31,6 @@
 .porcao-option .porcao-list {
   width: 100%;
   padding-left: 0;
+  /* overflow: scroll; */
 }
+

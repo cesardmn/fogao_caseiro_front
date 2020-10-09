@@ -10,7 +10,6 @@ interface ItemProps {
     amount: numbe,
 }
 
-
 interface ComboProps {
     acompanhamento: number,
     active: boolean,

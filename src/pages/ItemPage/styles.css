@@ -1,0 +1,13 @@
+#item-page {
+  height: 100vh;
+  width: 100vw;
+}
+
+#item-page .header {
+  height: 35vh;
+}
+
+#item-page .content {
+  align-items: center;
+  overflow: scroll;
+}

@@ -19,15 +19,14 @@ export default class Utils {
   }
 
   static getLinkItem() {
-    const db = DB.getDB()
+    
 
     const uri = (window.location.href)
       .split('/')
-      .slice(-2)
-    const title = uri[0]
-    const id = uri[1]
+      .slice(-2)[1]
 
-    return db[title][id]
+    return uri
+    
   }
 
   static getCombo(){

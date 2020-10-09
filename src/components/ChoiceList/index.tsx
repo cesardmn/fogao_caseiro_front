@@ -30,7 +30,7 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ title, amount, options, items }
 
           options.map((option: OptionProps) => {
             return (
-              <ChoiceItem item={option} />
+              <ChoiceItem item={option} key={option.id}/>
             )
           })
         }
@@ -41,7 +41,7 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ title, amount, options, items }
 
           items.map((item: ItemProps) => {
             return (
-              <ChoiceItem item={item} />
+              <ChoiceItem item={item} key={item.id}/>
             )
           })
         }

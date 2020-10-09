@@ -49,32 +49,32 @@ function HomePage() {
           </Card>
         </Link>
 
-        <Link to="#"> 
-        <Card
-          title={fit.title}
-          subtitle={fit.content[1]}
-          type={fit.type} >
+        <Link to="/fit">
+          <Card
+            title={fit.title}
+            subtitle={fit.content[1]}
+            type={fit.type} >
 
-          <div className="content-with-img">
-            <img src={fitImg} alt="fit" />
-            <p>{fit.content[0]}</p>
-          </div>
-        </Card>
+            <div className="content-with-img">
+              <img src={fitImg} alt="fit" />
+              <p>{fit.content[0]}</p>
+            </div>
+          </Card>
         </Link>
 
-        <Link to="#"> 
-        <Card
-          title={lowcarb.title}
-          subtitle={lowcarb.content[1]}
-          type={lowcarb.type} >
+        <Link to="/lowcarb">
+          <Card
+            title={lowcarb.title}
+            subtitle={lowcarb.content[1]}
+            type={lowcarb.type} >
 
-          <div className="content-with-img">
-            <img src={lowcarbImg} alt="lowcarb" />
-            <p>{lowcarb.content[0]}</p>
-          </div>
-        </Card>
+            <div className="content-with-img">
+              <img src={lowcarbImg} alt="lowcarb" />
+              <p>{lowcarb.content[0]}</p>
+            </div>
+          </Card>
         </Link>
-        
+
 
       </div>
 
