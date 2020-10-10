@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './styles.css'
-import logoImg from '../../assets/img/logo.png'
+// import logoImg from '../../assets/img/logo.png'
 
 import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
 import DB from '../../utils/DB';
@@ -76,7 +76,7 @@ function Header() {
       <div className="display-bar">
 
         <div className="left">
-          <img src={logoImg} alt="fogão caseiro logo" />
+          <img src="https://www.fogaocaseiro.com.br/logo.949d0a6c.png" alt="fogão caseiro logo" />
         </div>
 
         <div className="middle">

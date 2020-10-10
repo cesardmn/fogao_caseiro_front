@@ -77,7 +77,7 @@ function HomePage() {
         </Link>
 
 
-      </div>
+      </div> */}
 
     </div>
 
