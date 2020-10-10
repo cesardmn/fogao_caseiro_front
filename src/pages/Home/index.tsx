@@ -24,6 +24,7 @@ function HomePage() {
   return (
 
     <div id="home-page">
+      
       <div className="header">
         <Header />
       </div>

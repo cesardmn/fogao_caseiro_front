@@ -25,7 +25,7 @@ const ComboOptions = () => {
 
       <div className="top-combo">
         <h1>{combo.title}</h1>
-        <h2>R$ 167,50</h2>
+        {/* <h2>R$ 167,50</h2> */}
       </div>
 
 

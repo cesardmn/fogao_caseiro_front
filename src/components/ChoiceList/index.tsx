@@ -13,11 +13,11 @@ const ChoiceList: React.FC<ChoiceListProps> = ({ title, amount, options, items }
           <h2>{title}</h2>
           <p>escolha {amount} {amount > 1 ? 'opções' : 'opção'} </p>
         </div>
-
+{/* 
         <div className="option-counter">
           <div className="count">0/{amount}</div>
           <div className="count">obrigatório</div>
-        </div>
+        </div> */}
 
       </div>
 

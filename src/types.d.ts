@@ -26,6 +26,7 @@ interface CardProps {
     type: string,
     title: string,
     subtitle: string,
+    loading?: boolean,
 }
 
 interface OptionProps {

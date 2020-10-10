@@ -17,7 +17,12 @@
 
 
 .item-card .card-description .name {
+  flex-direction: row;
   font-size: 1.3rem;
+}
+
+.item-card .card-description .name strong {
+  margin-right: 0.4rem;
 }
 
 .item-card .card-description .price {

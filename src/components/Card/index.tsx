@@ -3,50 +3,53 @@ import { FaCarrot, FaDrumstickBite, FaListOl, FaUtensils } from 'react-icons/fa'
 
 import './styles.css'
 
-const Card: React.FC<CardProps> = ({type, title, subtitle, children}) => {
+const Card: React.FC<CardProps> = ({ type, title, subtitle, loading, children }) => {
   return (
-      <div className="card">
+    <div className="card">
 
-        <div className="top-card">
-          
-          <div className="icon-container">
-            {
-              type === 'fit' &&
-              <FaCarrot />
-            }
+      <div className="top-card">
 
-            {
-              type === 'lowcarb' &&
-              <FaDrumstickBite />
-            }
+        <div className="icon-container">
+          {
+            type === 'fit' &&
+            <FaCarrot />
+          }
 
-            {
-              type === 'combo' &&
-              <FaUtensils />
-            }
+          {
+            type === 'lowcarb' &&
+            <FaDrumstickBite />
+          }
 
-            {
-              type === 'porcoes' &&
-              <FaListOl />
-            }
-          </div>
+          {
+            type === 'combo' &&
+            <FaUtensils />
+          }
 
-
-          <div>
-            <strong>{title}</strong>
-            <p>{subtitle}</p>
-          </div>
-        </div>
-        
-        <div className="content-card">
-          {children}
+          {
+            type === 'porcoes' &&
+            <FaListOl />
+          }
         </div>
 
+
+        <div>
+          <strong>{title}</strong>
+          <p>{subtitle}</p>
+        </div>
+      </div>
+
+      <div className="content-card">
+        {children}
+      </div>
+
+      {
+        !loading &&
         <div className="bottom-card">
           <span>clique aqui e escolha</span>
         </div>
+      }
 
-      </div>
+    </div>
   )
 }
 

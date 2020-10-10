@@ -1,6 +1,7 @@
 #combo-options-page {
   height: 100vh;
   width: 100vw;
+  align-items: center;
 }
 
 #combo-options-page .header {
@@ -9,7 +10,6 @@
 
 #combo-options-page .top-combo {
   height: 10vh;
-  width: 100%;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -17,6 +17,24 @@
 }
 
 #combo-options-page .content {
-  /* width: 100%; */
+  height: 55vh;
+  width: 100vw;
   overflow: scroll;
+}
+
+@media(min-width: 700px) {
+  
+  #combo-options-page .top-combo {
+    /* font-size: 0.8rem; */
+    margin-top: 2rem;
+  }
+  
+  #combo-options-page .content {
+    width: 70vw;
+    height: 50%;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow-black);
+    overflow-x: hidden;
+  }
+
 }

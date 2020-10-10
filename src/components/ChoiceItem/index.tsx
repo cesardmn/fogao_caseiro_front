@@ -9,7 +9,9 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ item }) => {
       <div className="item-card">
 
         <div className="card-description">
-          <div className="name">{item.name}</div>
+          <div className="name">
+            <strong>{item.id}</strong> - {`${item.name.toLowerCase()}`}
+          </div>
           <div className="price">
             <div className="sale">
               {Utils.numberToCurrencyBRL(item.sale)}
@@ -26,11 +28,11 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ item }) => {
         </div>
 
 
-        <div className="card-controls">
+        {/* <div className="card-controls">
           <button>-</button>
           <span>0</span>
           <button>+</button>
-        </div>
+        </div> */}
       </div>
     </li>
   )

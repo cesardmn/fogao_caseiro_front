@@ -3,8 +3,9 @@ import React from 'react'
 import './styles.css'
 import logoImg from '../../assets/img/logo.png'
 
-import { FaInstagram, FaShoppingCart, FaWhatsapp } from 'react-icons/fa';
+import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
 import DB from '../../utils/DB';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -22,16 +23,47 @@ function Header() {
           <FaShoppingCart />
         </div>
 
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">
+                <FaHome />
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/combo">
+                <FaUtensils />
+              </Link>
+            </li>
+
+            <li>
+              <Link to="/fit">
+                <FaCarrot />
+              </Link>
+            </li>
+
+
+            <li>
+              <Link to="/lowcarb">
+                <FaDrumstickBite />
+              </Link>
+            </li>
+            
+
+          </ul>
+        </nav>
+
         <div className="social-container">
 
-          <a href="https://wa.me/5521999374814">
+          <a href="https://wa.me/5521999374814" target="blank">
             <div className="social-item">
               <FaWhatsapp />
               <strong>{info.contact[0]}</strong>
             </div>
           </a>
 
-          <a href="https://www.instagram.com/fogaocaseirooficial/">
+          <a href="https://www.instagram.com/fogaocaseirooficial/" target="blank">
             <div className="social-item">
               <FaInstagram />
               <strong>{info.contact[1]}</strong>
