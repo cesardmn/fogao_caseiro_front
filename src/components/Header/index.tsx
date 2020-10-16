@@ -56,12 +56,12 @@ function Header() {
 
         <div className="social-container">
 
-          <a href="https://wa.me/5521999374814" target="blank">
+          {/* <a href="https://wa.me/5521999374814" target="blank">
             <div className="social-item">
               <FaWhatsapp />
               <strong>{info.contact[0]}</strong>
             </div>
-          </a>
+          </a> */}
 
           <a href="https://www.instagram.com/fogaocaseirooficial/" target="blank">
             <div className="social-item">

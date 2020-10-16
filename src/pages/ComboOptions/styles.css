@@ -10,10 +10,21 @@
 
 #combo-options-page .top-combo {
   height: 10vh;
+  width: 100%;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 2rem;
+}
+
+#combo-options-page .top-combo h1 {
+  width: 80%;
+}
+
+#combo-options-page .top-combo .back-icon {
+  font-size: 2rem;
+  width: 50%;
+  justify-self: start;
 }
 
 #combo-options-page .content {
@@ -25,7 +36,7 @@
 @media(min-width: 700px) {
   
   #combo-options-page .top-combo {
-    /* font-size: 0.8rem; */
+    width: 70%;
     margin-top: 2rem;
   }
   

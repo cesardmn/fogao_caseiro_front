@@ -1,4 +1,6 @@
 import React from 'react'
+import { IoIosArrowBack } from 'react-icons/io';
+import { Link } from 'react-router-dom';
 import ChoiceList from '../../components/ChoiceList';
 import Header from '../../components/Header';
 import DB from '../../utils/DB';
@@ -24,6 +26,12 @@ const ComboOptions = () => {
       </div>
 
       <div className="top-combo">
+
+        <div className="back-icon">
+          <Link to="/combo">
+            <IoIosArrowBack />
+          </Link>
+        </div>
         <h1>{combo.title}</h1>
         {/* <h2>R$ 167,50</h2> */}
       </div>
