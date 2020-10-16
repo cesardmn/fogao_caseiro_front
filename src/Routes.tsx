@@ -15,8 +15,8 @@ function Routes() {
         <Route path="/menu" component={PrintMenu} exact />
         <Route path="/" component={Home} exact />
         <Route path="/combo" component={ComboPage} exact />
-        <Route path="/combo/:id" component={ComboOptions} />
-        <Route path="/:name" component={ItemPage} />
+        <Route path="/combo/:id" component={ComboOptions} exact/>
+        <Route path="/:name" component={ItemPage} exact/>
       </Switch>
     </BrowserRouter>
   )

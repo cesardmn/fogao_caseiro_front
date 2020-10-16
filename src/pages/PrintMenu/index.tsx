@@ -9,6 +9,8 @@ import Utils from '../../utils/Utils'
 function PrintMenu() {
 
   const info = DB.getItem('info')
+  console.log(info.cards[2].content[1]);
+  
   const fit = DB.getItem('fit')
   const lowcarb = DB.getItem('lowcarb')
   const acompanhamentos = DB.getItem('acompanhamentos')
@@ -18,13 +20,13 @@ function PrintMenu() {
   const peixes = DB.getItem('peixes')
 
   const menu = [
-    { type: 'Fit', info: "Embalagem de 500ml.", items: fit },
-    { type: 'Low Carb', info: "Embalagem de 500ml.", items: lowcarb },
-    { type: 'Acompanhamentos', info: "Embalagem de 750ml.", items: acompanhamentos },
-    { type: 'Carnes', info: "Embalagem de 750ml.", items: carnes },
-    { type: 'Frangos', info: "Embalagem de 750ml.", items: frangos },
-    { type: 'Massas', info: "Embalagem de 750ml.", items: massas },
-    { type: 'Peixes', info: "Embalagem de 750ml.", items: peixes },
+    { type: 'Fit', info: info.cards[1].content[1], items: fit },
+    { type: 'Low Carb', info: info.cards[2].content[1], items: lowcarb },
+    { type: 'Acompanhamentos', info: info.cards[0].content[1], items: acompanhamentos },
+    { type: 'Carnes', info: info.cards[0].content[1], items: carnes },
+    { type: 'Frangos', info: info.cards[0].content[1], items: frangos },
+    { type: 'Massas', info: info.cards[0].content[1], items: massas },
+    { type: 'Peixes', info: info.cards[0].content[1], items: peixes },
   ]
 
   return (

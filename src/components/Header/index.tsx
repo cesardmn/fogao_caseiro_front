@@ -1,9 +1,8 @@
 import React from 'react'
 
 import './styles.css'
-// import logoImg from '../../assets/img/logo.png'
 
-import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaListUl, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
+import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
 import DB from '../../utils/DB';
 import { Link } from 'react-router-dom';
 
@@ -25,54 +24,46 @@ function Header() {
 
         <nav>
           <ul>
-            <li>
-              <Link to="/">
+            <Link to="/">
+              <li>
                 <FaHome />
-              </Link>
-              <span>home</span>
-            </li>
+                <span>home</span>
+              </li>
+            </Link>
 
-            <li>
-              <Link to="/combo">
+            <Link to="/combo">
+              <li>
                 <FaUtensils />
-              </Link>
-              <span>combos</span>
-            </li>
+                <span>combos</span>
+              </li>
+            </Link>
 
-            <li>
-              <Link to="/fit">
+            <Link to="/fit">
+              <li>
                 <FaCarrot />
-              </Link>
-              <span>fit</span>
-            </li>
+                <span>fit</span>
+              </li>
+            </Link>
 
 
-            <li>
-              <Link to="/lowcarb">
+            <Link to="/lowcarb">
+              <li>
                 <FaDrumstickBite />
-              </Link>
-              <span>low carb</span>
-            </li>
-
-            <li className="menu-print">
-              <Link to="/menu">
-                <FaListUl />
-              </Link>
-              <span>cardápio</span>
-            </li>
-            
+                <span>low carb</span>
+              </li>
+            </Link>
 
           </ul>
         </nav>
 
         <div className="social-container">
 
-          {/* <a href="https://wa.me/5521999374814" target="blank">
+          <a href="https://wa.me/5521999374814" target="blank">
             <div className="social-item">
               <FaWhatsapp />
               <strong>{info.contact[0]}</strong>
             </div>
-          </a> */}
+          </a>
 
           <a href="https://www.instagram.com/fogaocaseirooficial/" target="blank">
             <div className="social-item">

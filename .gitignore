@@ -18,6 +18,7 @@
 .env.test.local
 .env.production.local
 .env
+.htaccess
 credentials.json
 
 npm-debug.log*
