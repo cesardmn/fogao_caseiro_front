@@ -3,7 +3,7 @@ import React from 'react'
 import './styles.css'
 // import logoImg from '../../assets/img/logo.png'
 
-import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
+import { FaCarrot, FaDrumstickBite, FaHome, FaInstagram, FaListUl, FaShoppingCart, FaUtensils, FaWhatsapp } from 'react-icons/fa';
 import DB from '../../utils/DB';
 import { Link } from 'react-router-dom';
 
@@ -29,18 +29,21 @@ function Header() {
               <Link to="/">
                 <FaHome />
               </Link>
+              <span>home</span>
             </li>
 
             <li>
               <Link to="/combo">
                 <FaUtensils />
               </Link>
+              <span>combos</span>
             </li>
 
             <li>
               <Link to="/fit">
                 <FaCarrot />
               </Link>
+              <span>fit</span>
             </li>
 
 
@@ -48,6 +51,14 @@ function Header() {
               <Link to="/lowcarb">
                 <FaDrumstickBite />
               </Link>
+              <span>low carb</span>
+            </li>
+
+            <li className="menu-print">
+              <Link to="/menu">
+                <FaListUl />
+              </Link>
+              <span>cardápio</span>
             </li>
             
 
