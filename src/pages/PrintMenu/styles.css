@@ -79,7 +79,8 @@ body {
   padding-top: 2rem
 }
 
-.page .print .title .info-item {align-items: ;
+.page .print .title .info-item {
+  /* align-items: ; */
   color: var(--color-complementary);
   font-size: 1.4rem;
   justify-content: space-evenly;
