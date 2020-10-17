@@ -1,5 +1,5 @@
 {
-  "name": "fogao_caseiro_front",
+  "name": "fogaocaseiro_front",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,8 +11,8 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "axios": "^0.20.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "react-icons": "^3.11.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -39,8 +39,8 @@
       "last 1 safari version"
     ]
   },
+  "homepage": ".",
   "devDependencies": {
-    "@types/react-router-dom": "^5.1.5"
-  },
-  "homepage": "."
+    "@types/react-router-dom": "^5.1.6"
+  }
 }

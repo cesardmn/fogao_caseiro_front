@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import Routes from './Routes'
 import api from './services/api';
-import LoadingPage from './pages/LoadingPage';
+import DB from './services/DB';
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    api.get('').then(response => {
-      const fcdb = JSON.stringify(response.data)
-      localStorage.setItem("fcdb", fcdb)
+  // useEffect(() => {
+  //   api.get('').then(response => {
+  //     DB.setDB(response.data)
+  //     setIsLoading(false)
 
-      setIsLoading(false)
+  //   })
+  // }, [])
 
-    })
-  }, [])
-
-  return isLoading ? <LoadingPage /> : <Routes />
+  return isLoading ? null : <Routes />
+  // return <Routes />
 }
 
-export default App;
+export default App; 
