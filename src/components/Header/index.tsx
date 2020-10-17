@@ -6,9 +6,6 @@ import { FaHome, FaUtensils, FaCarrot, FaDrumstickBite, FaWhatsapp, FaInstagram,
 import './styles.css'
 
 const aboutInfo = DB.getInfo('about')
-const comboInfo = DB.getInfo('combo')
-const fitInfo = DB.getInfo('fit')
-const lowcarbInfo = DB.getInfo('lowcarb')
 const contactInfo = DB.getInfo('contact')
 const deliveryInfo = DB.getInfo('delivery')
 const orderInfo = DB.getInfo('order')
