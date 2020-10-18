@@ -19,4 +19,8 @@ export default class DB {
     return db.products.lunches[`${lunch}s`]
   }
   
+  static getCombos() {
+    const db = this.getDB()
+    return db.products.combos
+  }
 }

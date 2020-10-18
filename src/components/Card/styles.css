@@ -76,23 +76,6 @@
   color: var(--color-secondary);
 }
 /* 
-.card .content-card .content-with-img {
-  height: 100%;
-  width: 100%;
-}
-
-.card .content-card .content-with-img img {
-  height: 45%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.card .content-card .content-with-img p {
-  padding: 1rem 2.5rem;
-  font-size: 1.3rem;
-  text-align: justify;
-}
-
 .card .content-card .content-with-list {
   height: 100%;
   width: 100%;
