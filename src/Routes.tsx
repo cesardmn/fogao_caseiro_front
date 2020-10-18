@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import  ComboPage from './pages/ComboPage'
+import ChoicePage from './pages/ChoicePage'
 
 function Routes() {
   return (
@@ -9,6 +10,9 @@ function Routes() {
       <Switch>
         <Route path="/" component={HomePage} exact/>
         <Route path="/combo" component={ComboPage} exact />
+        <Route path="/fit" component={ChoicePage} exact />
+        <Route path="/lowcarb" component={ChoicePage} exact />
+        <Route path="/combo/:id" component={ChoicePage} />
       </Switch>
     </BrowserRouter>
   )

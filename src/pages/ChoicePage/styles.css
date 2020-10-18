@@ -1,0 +1,21 @@
+.choice-content {
+  width: 100vw;
+  position: relative;
+}
+
+.choice-content .top-choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid blue;
+}
+
+.choice-content .top-choice .back-icon {
+  position: absolute;
+  left: 0;
+  top:0;
+  font-size: 2rem;
+  padding: 1.5rem;
+}
+

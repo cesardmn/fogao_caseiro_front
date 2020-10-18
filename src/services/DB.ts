@@ -23,4 +23,8 @@ export default class DB {
     const db = this.getDB()
     return db.products.combos
   }
+
+  static getCombo(id: string) {
+    return this.getCombos()[Number(id) - 1]
+  }
 }

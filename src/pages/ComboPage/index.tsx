@@ -10,10 +10,6 @@ const ComboPage = () => {
 
   const comboInfo = DB.getInfo('combo')
   const combos = DB.getCombos()
-  console.log(combos[0].portions);
-
-
-
 
   return (
     <PageDefault >
@@ -43,7 +39,7 @@ const ComboPage = () => {
                         </thead>
                         <tbody>
                           {
-                            combo.portions.map((portion: any, index:number) => {
+                            combo.portions.map((portion: any, index: number) => {
                               return (
                                 portion !== "" &&
                                 <tr key={index}>
