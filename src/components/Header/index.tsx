@@ -56,14 +56,14 @@ const Header = () => {
               </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="/lowcarb">
                 <div className="item-menu">
                   <FaShoppingCart />
                   <span>carrinho</span>
                 </div>
               </Link>
-            </li>
+            </li> */}
 
           </ul>
 

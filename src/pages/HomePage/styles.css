@@ -15,7 +15,7 @@
   width: 90vw;
   min-width: 320px;
   max-width: 700px;
-  margin: 1rem 2rem;
+  margin-top: 2rem;
   background-color: #fff;
   border-radius: 2rem;
   padding: 2rem;
@@ -39,5 +39,13 @@
 @media (min-width: 700px) {
   .home-page .about {
     display: none;
+  }
+  
+  .home-page .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap ;
+    width: 100%;
   }
 }

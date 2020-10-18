@@ -19,6 +19,7 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-color: var(--color-complementary-light);
 }
 
 @media (min-width: 700px) {
@@ -28,6 +29,6 @@
   }
   #page-default main {
     height: 70vh;
-    margin-top: 6rem;
+    padding-top: 6rem;
   }
 }

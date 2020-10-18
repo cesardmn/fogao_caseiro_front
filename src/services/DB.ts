@@ -14,5 +14,9 @@ export default class DB {
     return db.info[type]
   }
 
+  static getLunch(lunch: string) {
+    const db = this.getDB()
+    return db.products.lunches[`${lunch}s`]
+  }
   
 }
