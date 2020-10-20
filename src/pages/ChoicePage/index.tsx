@@ -69,9 +69,9 @@ const ChoicePage = () => {
                         return (
                           <li key={index} className="item">
                             <div className="description">
-                              
+
                               <p><strong>{item.id}</strong> - {item.name.toLowerCase()}</p>
-                              
+
                               <div className="price">
                                 <span className="sale">{Utils.numberToCurrencyBRL(item.sale)}</span>
                                 {
@@ -83,9 +83,9 @@ const ChoicePage = () => {
 
                             <div className="controls">
                               <div className="wrapper">
-                              <button>-</button>
-                              <span>0</span>
-                              <button>+</button>
+                                <button>-</button>
+                                <span>0</span>
+                                <button>+</button>
                               </div>
                             </div>
 
