@@ -44,11 +44,22 @@
   color: var(--color-success);
 }
 
-.choice-content .choice-list {
+
+.choice-content .choice-list-container {
   width: 100%;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.choice-content .choice-list {
+  /* background-color: var(--color-background-white); */
 }
 
 .choice-content .choice-list .top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   height: 10vh;
   width: 100vw;
   display: flex;
@@ -66,4 +77,70 @@
   font-weight: 500;
   padding: .5rem;
   border-radius: 0.5rem;
+}
+
+.item {
+  height: 12vh;
+  width: 100vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-complementary-light);
+}
+
+.item .description {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
+  /* border: 1px solid blue; */
+  color: var(--color-complementary);
+}
+
+.item .description strong {
+  color: var(--color-secondary);
+}
+
+.item .description .price .sale {
+  color: var(--color-success);
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.item .description .price .full {
+  font-size: 1.1rem;
+  font-weight: 200;
+  text-decoration: line-through;
+  color: var(--color-complementary-dark);
+}
+.item .controls {
+  height: 100%;
+  padding: 1.5rem.5rem;
+  width: 25%;
+  /* border: 1px solid blue; */
+}
+
+.item .controls .wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-complementary-light);
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--color-complementary);
+}
+
+.item .controls .wrapper button {
+  height: 100%;
+  width: 30%;
+  background-color: inherit;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 2rem;
+  outline: 0;
 }
