@@ -15,7 +15,7 @@ function App() {
     })
   }, [])
 
-  return isLoading ? null : <Routes />
+  return isLoading ? <h1>Loading...</h1> : <Routes />
   // return <Routes />
 }
 

@@ -11,42 +11,66 @@ import './styles.css'
 import { Link } from 'react-router-dom';
 
 interface ParamsProps {
-  id: string
+  id: string,
+  name: string
 }
 
 const ChoicePage = () => {
 
-  const { id } = useParams<ParamsProps>()
-  const combo = DB.getCombo(id)
-
-  const toChoices = {
-    title: combo.title,
-    choices: combo.portions
-  }
+  const { id, name } = useParams<ParamsProps>()
+  const toChoices = id ? DB.getCombo(id) : DB.getLunch(name)
 
   return (
     <PageDefault >
       <div className="choice-content">
-        
+
         <div className="top-choice">
-          <Link to="/combo">
-            <div className="back-icon">
+
+          <div className="back-icon">
+            <Link to={id ? '/combo' : '/'}>
               <IoIosArrowBack />
-            </div>
-          </Link>
-          <h1>{toChoices.title}</h1>
+            </Link>
+          </div>
+
+          <h2 className="title">{toChoices.title}</h2>
+
+          <div className="total">R$ 1.500,50</div>
+
         </div>
 
-        <div className="list">
-          {
-            toChoices.choices.map((choice: any, index: number) =>{
-              return (
-              <p key={index}>{choice.choices[1].name}</p>
-              // <p></p>
-              )
-            })
-          }
-        </div>
+        {
+          toChoices.choices.map((choice: any, index: number) => {
+            return (
+              <div className="choice-list" key={index}>
+
+                <div className="top">
+                  <div className="left">
+                    <h2 className="title">{choice.name}</h2>
+                    <p className="amount">escolha {choice.choice_amount} {choice.choice_amount > 1 ? 'opções' : 'opção'}</p>
+                  </div>
+
+                  <div className="right">
+                    <span>0/{choice.choice_amount}</span>
+                    <span>obrigatório</span>
+                  </div>
+                </div>
+
+                <ul>
+                  {
+                    choice.items.map((item: any, index: number) => {
+                      return (
+                        <li key={index}>
+                          <p><strong>{item.id}</strong> - {item.name} - {item.sale}</p>
+                        </li>
+                      )
+                    })
+                  }
+                </ul>
+
+              </div>
+            )
+          })
+        }
 
       </div>
     </PageDefault>

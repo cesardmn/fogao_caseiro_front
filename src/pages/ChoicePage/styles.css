@@ -1,21 +1,69 @@
 .choice-content {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  position: relative;
+  background-color: var(--color-background-white);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .choice-content .top-choice {
+  height: 10vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1rem;
-  border: 1px solid blue;
+  justify-content: space-between;
 }
 
 .choice-content .top-choice .back-icon {
-  position: absolute;
-  left: 0;
-  top:0;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
   font-size: 2rem;
-  padding: 1.5rem;
+  padding-left: 1rem;
+
 }
 
+.choice-content .top-choice .title {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-content .top-choice .total {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--color-success);
+}
+
+.choice-content .choice-list {
+  width: 100%;
+}
+
+.choice-content .choice-list .top {
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-complementary-light);
+  padding: 1rem;
+}
+
+.choice-content .choice-list .top .right span {
+  background-color: var(--color-complementary);
+  color: var(--color-complementary-light);
+  margin-left: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: .5rem;
+  border-radius: 0.5rem;
+}

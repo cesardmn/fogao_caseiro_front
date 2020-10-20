@@ -5,12 +5,13 @@ import { FaHome, FaUtensils, FaCarrot, FaDrumstickBite, FaWhatsapp, FaInstagram,
 
 import './styles.css'
 
-const aboutInfo = DB.getInfo('about')
-const contactInfo = DB.getInfo('contact')
-const deliveryInfo = DB.getInfo('delivery')
-const orderInfo = DB.getInfo('order')
-
 const Header = () => {
+
+  const aboutInfo = DB.getInfo('about')
+  const contactInfo = DB.getInfo('contact')
+  const deliveryInfo = DB.getInfo('delivery')
+  const orderInfo = DB.getInfo('order')
+
   return (
     <div className="header">
       <div className="bg"></div>
@@ -57,7 +58,7 @@ const Header = () => {
             </li>
 
             {/* <li>
-              <Link to="/lowcarb">
+              <Link to="/cart">
                 <div className="item-menu">
                   <FaShoppingCart />
                   <span>carrinho</span>
