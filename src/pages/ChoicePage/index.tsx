@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router'
 
 import PageDefault from '../../components/PageDefault'
@@ -11,6 +11,7 @@ import './styles.css'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Utils from '../../Utils';
+import ChoiceList from '../../components/ChoiceList';
 
 interface ParamsProps {
   id: string,
@@ -22,11 +23,20 @@ const ChoicePage = () => {
   const { id, name } = useParams<ParamsProps>()
   const toChoices = id ? DB.getCombo(id) : DB.getLunch(name)
 
-  const [totalAmount, setTotalAmount] = useState(0)
+  const [totalChoicesValue, setTotalChoiceValues] = useState(0)
+
+  function addTotalChoiceValues(value: number) {
+    setTotalChoiceValues(totalChoicesValue + value)
+  }
+
+  function removeTotalChoiceValues(value: number) {
+    setTotalChoiceValues(totalChoicesValue - value)
+  }
 
 
   return (
-    <PageDefault >
+
+    <div id="page-default">
       <div className="choice-content">
 
         <div className="top-choice">
@@ -37,72 +47,39 @@ const ChoicePage = () => {
             </Link>
           </div>
 
-          <h2 className="title">{toChoices.title}</h2>
-
-          <div className="total">R$ 1.500,50</div>
+          <button>
+            Adicionar
+            <div
+              className="total"
+              key={`${toChoices.choices[0].name}`}>
+              {Utils.numberToCurrencyBRL(totalChoicesValue)}
+            </div>
+          </button>
 
         </div>
+        
+        <h2 className="title">{toChoices.title}</h2>
 
         <div className="choice-list-container">
-
-
           {
             toChoices.choices.map((choice: any, index: number) => {
               return (
-                <div className="choice-list" key={index}>
-
-                  <div className="top">
-                    <div className="left">
-                      <h2 className="title">{choice.name}</h2>
-                      <p className="amount">escolha {choice.choice_amount} {choice.choice_amount > 1 ? 'opções' : 'opção'}</p>
-                    </div>
-
-                    <div className="right">
-                      <span>{totalAmount}/{choice.choice_amount}</span>
-                      <span>obrigatório</span>
-                    </div>
-                  </div>
-
-                  <ul className="items-list">
-                    {
-                      choice.items.map((item: any, index: number) => {
-                        return (
-                          <li key={index} className="item">
-                            <div className="description">
-
-                              <p><strong>{item.id}</strong> - {item.name.toLowerCase()}</p>
-
-                              <div className="price">
-                                <span className="sale">{Utils.numberToCurrencyBRL(item.sale)}</span>
-                                {
-                                  item.hot &&
-                                  <span className="full">{Utils.numberToCurrencyBRL(item.price)}</span>
-                                }
-                              </div>
-                            </div>
-
-                            <div className="controls">
-                              <div className="wrapper">
-                                <button>-</button>
-                                <span>0</span>
-                                <button>+</button>
-                              </div>
-                            </div>
-
-                          </li>
-                        )
-                      })
-                    }
-                  </ul>
-
-                </div>
+                <ChoiceList
+                  key={`${choice.name}#${index}`}
+                  choice={choice}
+                  addTotalChoiceValues={addTotalChoiceValues}
+                  removeTotalChoiceValues={removeTotalChoiceValues}
+                  totalChoicesValue={totalChoicesValue}
+                  setTotalChoiceValues={setTotalChoiceValues}
+                />
               )
             })
           }
         </div>
 
       </div>
-    </PageDefault>
+    </div>
+
   )
 }
 

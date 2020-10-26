@@ -1,6 +1,8 @@
 .choice-content {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   min-width: 320px;
   background-color: var(--color-background-white);
@@ -16,6 +18,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem;
 }
 
 .choice-content .top-choice .back-icon {
@@ -24,15 +27,17 @@
   display: flex;
   align-items: center;
   font-size: 2rem;
-  padding-left: 1rem;
 }
 
-.choice-content .top-choice .title {
-  height: 100%;
-  width: 50%;
+.choice-content .top-choice button {
+  width: 15rem;
   display: flex;
+  flex-direction: column;
+  background-color: var(--color-secondary);
+  color: var(--color-text-white);
+  border-radius: 0.5rem;
   align-items: center;
-  justify-content: center;
+  box-shadow: var(--box-shadow-black);
 }
 
 .choice-content .top-choice .total {
@@ -43,7 +48,14 @@
   justify-content: center;
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--color-success);
+}
+
+.choice-content .title {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .choice-content .choice-list-container {
@@ -150,7 +162,7 @@
   outline: 0;
 }
 
-@media (min-width: 700px){
+@media (min-width: 700px) {
   .choice-content {
     height: 95%;
     margin-top: 0.5rem;

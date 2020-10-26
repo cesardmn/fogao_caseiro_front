@@ -5,15 +5,15 @@ import DB from './services/DB';
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    api.get('').then(response => {
-      DB.setDB(response.data)
-      setIsLoading(false)
+  // useEffect(() => {
+  //   api.get('').then(response => {
+  //     DB.setDB(response.data)
+  //     setIsLoading(false)
 
-    })
-  }, [])
+  //   })
+  // }, [])
 
   return isLoading ? <h1>Loading...</h1> : <Routes />
   // return <Routes />
