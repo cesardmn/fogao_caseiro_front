@@ -1,4 +1,4 @@
-import ChoicePage from "../pages/ChoicePage"
+
 
 export default class DB {
 

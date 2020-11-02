@@ -1,37 +1,68 @@
 import React, { useState } from 'react'
+import { isEnumMember } from 'typescript'
 import Utils from '../../Utils'
+
+import './styles.css'
 
 interface ChoiceItemProps {
   item: any
-  choiceAmount: number
-  totalAmount: number
-  setTotalAmount: any
-  totalChoiceValues: any
-  setTotalChoiceValues: any
+  amount: number
+  setAmount: any
+  total: number
+  setTotal: any
+  portionAmount?: number
+  setPortionAmount?: any
+  choiceAmount?: number
 }
 
-const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, choiceAmount, totalAmount, setTotalAmount, totalChoiceValues, setTotalChoiceValues}) => {
+const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, total, setTotal, amount, setAmount, portionAmount, setPortionAmount, choiceAmount }) => {
 
-  
-  function addItem(value:number) {
-    if (totalItem < choiceAmount && totalAmount < choiceAmount  ) {
-      setTotalAmount(totalAmount + 1)
-      setTotalItem(totalItem + 1)
-      setTotalChoiceValues(totalChoiceValues + value)
-      window.navigator.vibrate(20)
-    }
-  }
-
-  function removeItem(value:number) {
-    if(totalItem > 0) {
-      setTotalAmount(totalAmount - 1)
-      setTotalItem(totalItem - 1)
-      setTotalChoiceValues(totalChoiceValues -   value)
-      window.navigator.vibrate(20)
-    }
-  }
-  
   const [totalItem, setTotalItem] = useState(0)
+
+  function sumItem() {
+
+  }
+
+  function addItem(value: number) {
+    if (portionAmount !== undefined && choiceAmount) {
+      if (portionAmount < choiceAmount) {
+        setPortionAmount(portionAmount + 1)
+
+        setTotal(total + value)
+        setAmount(amount + 1)
+        setTotalItem(totalItem + 1);
+        navigator.vibrate(20)
+      }
+    } else {
+      setTotal(total + value)
+      setAmount(amount + 1)
+      setTotalItem(totalItem + 1);
+      navigator.vibrate(20)
+    }
+
+  }
+
+  function removeItem(value: number) {
+
+    if (portionAmount !== undefined && choiceAmount) {
+      if (portionAmount > 0) {
+        setPortionAmount(portionAmount - 1)
+
+        setTotal(total - value)
+        setAmount(amount - 1)
+        setTotalItem(totalItem - 1);
+        navigator.vibrate(20)
+      }
+    } else {
+
+      if (totalItem > 0) {
+        setTotal(total - value)
+        setAmount(amount - 1)
+        setTotalItem(totalItem - 1)
+        navigator.vibrate(20)
+      }
+    }
+  }
 
   return (
     <li className="item">
@@ -50,9 +81,9 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, choiceAmount, totalAmount
 
       <div className="controls">
         <div className="wrapper">
-          <button onClick={() => {removeItem(item.sale)}} >-</button>
+          <button onClick={() => removeItem(item.sale)} >-</button>
           <span>{totalItem}</span>
-          <button onClick={() =>{addItem(item.sale)}} >+</button>
+          <button onClick={() => addItem(item.sale)} >+</button>
         </div>
       </div>
 
