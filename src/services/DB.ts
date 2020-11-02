@@ -22,13 +22,12 @@ export default class DB {
 
     return  {
       title: choices[0].title,
-      choices: [
+      choices: 
         {
           name: choices[0].title,
           choice_amount: 5,
           items: choices
         }
-      ]
     }
   }
 
