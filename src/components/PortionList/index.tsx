@@ -1,4 +1,4 @@
-import React, { Children, useState } from 'react'
+import React, {useState } from 'react'
 import ChoiceItem from '../ChoiceItem'
 
 import './styles.css'

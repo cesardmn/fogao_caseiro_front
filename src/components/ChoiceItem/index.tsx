@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { isEnumMember } from 'typescript'
 import Utils from '../../Utils'
 
 import './styles.css'
@@ -18,10 +17,6 @@ interface ChoiceItemProps {
 const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, total, setTotal, amount, setAmount, portionAmount, setPortionAmount, choiceAmount }) => {
 
   const [totalItem, setTotalItem] = useState(0)
-
-  function sumItem() {
-
-  }
 
   function addItem(value: number) {
     if (portionAmount !== undefined && choiceAmount) {

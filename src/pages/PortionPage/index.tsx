@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { IoIosArrowBack } from 'react-icons/io'
 import { Link, useParams } from 'react-router-dom'
-import ChoiceItem from '../../components/ChoiceItem'
-import PageDefault from '../../components/PageDefault'
 import PortionList from '../../components/PortionList'
 import DB from '../../services/DB'
 import Utils from '../../Utils'
@@ -41,7 +39,7 @@ const LunchesPage = () => {
 
         <button>
           <span className="total">{Utils.numberToCurrencyBRL(total)}</span>
-          <span> Adicionar</span>
+          <span> total</span>
         </button>
       </div>
 
