@@ -35,11 +35,12 @@ const HomePage = () => {
                     title={card.title}
                     subtitle={card.content[1]}>
 
-                    <img src={`https://www.fogaocaseiro.com.br/static/media/${card.type}.png`} alt="fogão caseiro" />
+                    <img src={`https://www.fogaocaseiro.com.br/imgs/${card.type}.jpeg`} alt="fogão caseiro" />
+                    
 
                     <p>{card.content[0]}</p>
                   </Card>
-                </Link>
+                </Link> 
               )
             })
           }

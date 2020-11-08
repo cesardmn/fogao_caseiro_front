@@ -34,14 +34,14 @@ const LunchesPage = () => {
           <p>{comboInfo}</p>
         </div>
       </div>
-
+{/* 
       <div className="bottom">
 
         <button>
           <span className="total">{Utils.numberToCurrencyBRL(total)}</span>
           <span> total</span>
         </button>
-      </div>
+      </div> */}
 
       <div className="lunches-list">
         {

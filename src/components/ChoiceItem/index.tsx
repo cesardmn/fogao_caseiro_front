@@ -27,13 +27,18 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, total, setTotal, amount, 
         setAmount(amount + 1)
         setTotalItem(totalItem + 1);
         navigator.vibrate(20)
+        Utils.setItemIntoCart(item)
       }
     } else {
       setTotal(total + value)
       setAmount(amount + 1)
       setTotalItem(totalItem + 1);
       navigator.vibrate(20)
+      Utils.setItemIntoCart(item)
     }
+
+
+
 
   }
 
@@ -74,13 +79,13 @@ const ChoiceItem: React.FC<ChoiceItemProps> = ({ item, total, setTotal, amount, 
         </div>
       </div>
 
-      <div className="controls">
+      {/* <div className="controls">
         <div className="wrapper">
           <button onClick={() => removeItem(item.sale)} >-</button>
           <span>{totalItem}</span>
           <button onClick={() => addItem(item.sale)} >+</button>
         </div>
-      </div>
+      </div> */}
 
     </li>
   )

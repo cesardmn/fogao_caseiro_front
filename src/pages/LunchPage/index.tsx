@@ -11,6 +11,32 @@ const LunchesPage = () => {
   const [amount, setAmount] = useState(0)
   const [total, setTotal] = useState(0)
 
+  const item = {
+    type: "lunches",
+    lunches: [
+      { type: "fit", id: "5", amount: 2, sale: 15 },
+      { type: "fit", id: "2", amount: 1, sale: 15 },
+      { type: "fit", id: "1", amount: 1, sale: 15 },
+      { type: "lowcarb", id: "4", amount: 1, sale: 15 }
+    ]
+  }
+
+  const item2 = {
+    type: "combo",
+    portions: [
+      { type: "acompanhamento", id: "5", amount: 1, sale: 49 },
+      { type: "acompanhamento", id: "2", amount: 1, sale: 27 },
+      { type: "carne", id: "3", amount: 1, sale: 60 },
+      { type: "frango", id: "1", amount: 1, sale: 25 },
+      { type: "massa", id: "4", amount: 1, sale: 35 }
+    ]
+  }
+
+
+  // const cart = Utils.getCart()
+  // Utils.setItemIntoCart(item)
+
+
   interface ParamsProps {
     name: string,
   }
@@ -33,7 +59,7 @@ const LunchesPage = () => {
         <h1 className="title">Marmitas</h1>
       </div>
 
-      <div className="bottom">
+      {/* <div className="bottom">
 
         <div className="amount">
           <span>{amount} / 5 (mínimo)</span>
@@ -43,7 +69,7 @@ const LunchesPage = () => {
           <span className="total">{Utils.numberToCurrencyBRL(total)}</span>
           <span> total</span>
         </button>
-      </div>
+      </div> */}
 
       <div className="lunches-list">
         {
