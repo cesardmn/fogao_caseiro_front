@@ -95,7 +95,10 @@ function PrintMenu() {
                           </div>
 
                           <div className="price">
-                            {Utils.numberToCurrencyBRL(item.sale)}
+                            {
+                              item.hot && <div className="full">{Utils.numberToCurrencyBRL(item.price)}</div>
+                            }
+                            <div className="sale">{Utils.numberToCurrencyBRL(item.sale)}</div>
                           </div>
                         </li>
                       )

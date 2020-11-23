@@ -3,10 +3,6 @@ import Header from '../../components/Header'
 import DB from '../../utils/DB'
 
 import './styles.css'
-import comboImg from '../../assets/img/combo.png'
-import fitImg from '../../assets/img/fit.png'
-import lowcarbImg from '../../assets/img/lowcarb.png'
-
 
 import Card from '../../components/Card'
 import { Link } from 'react-router-dom'
@@ -43,7 +39,7 @@ function HomePage() {
             type={combo.type} >
 
             <div className="content-with-img">
-              <img src={comboImg} alt="combo caseiro" />
+              <img src="https://www.fogaocaseiro.com.br/imgs/combo.jpeg" alt="combo caseiro" />
               <p>{combo.content[0]}</p>
             </div>
 
@@ -57,7 +53,7 @@ function HomePage() {
             type={fit.type} >
 
             <div className="content-with-img">
-              <img src={fitImg} alt="fit" />
+              <img src="https://www.fogaocaseiro.com.br/imgs/fit.jpeg" alt="fit" />
               <p>{fit.content[0]}</p>
             </div>
           </Card>
@@ -70,7 +66,7 @@ function HomePage() {
             type={lowcarb.type} >
 
             <div className="content-with-img">
-              <img src={lowcarbImg} alt="lowcarb" />
+              <img src="https://www.fogaocaseiro.com.br/imgs/lowcarb.jpeg" alt="lowcarb" />
               <p>{lowcarb.content[0]}</p>
             </div>
           </Card>
