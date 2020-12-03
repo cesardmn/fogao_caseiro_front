@@ -12,7 +12,7 @@
   position: absolute;
   top: 0;
   z-index: -1;
-  background-image: url('https://www.fogaocaseiro.com.br/static/media/bg.691f89bf.png');
+  background-image: url('https://www.fogaocaseiro.com.br/imgs/bg.png');
   background-size: cover;
   filter: blur(1px);
   -webkit-filter: blur(1px);

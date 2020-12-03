@@ -18,7 +18,7 @@ const Header = () => {
 
       <div className="top-bar">
 
-        <img src="https://www.fogaocaseiro.com.br/static/media/logo.949d0a6c.png" alt="fogão caseiro" />
+        <img src="https://www.fogaocaseiro.com.br/imgs/logo.png" alt="fogão caseiro" />
 
         <nav>
           <ul>
@@ -91,7 +91,7 @@ const Header = () => {
 
       <div className="info-bar">
         <div className="logo">
-          <img src="https://www.fogaocaseiro.com.br/static/media/logo.949d0a6c.png" alt="fogão caseiro" />
+          <img src="https://www.fogaocaseiro.com.br/imgs/logo.png" alt="fogão caseiro" />
         </div>
 
         <div className="about">

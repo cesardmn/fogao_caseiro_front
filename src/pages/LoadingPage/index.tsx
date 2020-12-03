@@ -9,7 +9,7 @@ function LoadingPage() {
   return (
     <div id="loading">
 
-      <img src="https://www.fogaocaseiro.com.br/static/media/logo.949d0a6c.png" alt="logo fogão caseiro" />
+      <img src="https://www.fogaocaseiro.com.br/imgs/logo.png" alt="logo fogão caseiro" />
 
       <Card
         type={'porcoes'}
