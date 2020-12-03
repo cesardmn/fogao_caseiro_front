@@ -15,7 +15,7 @@ const HomePage = () => {
 
   const cardsInfo = [comboInfo, fitInfo, lowcarbInfo]
 
-  return (
+    return (
     <PageDefault >
       <div className="home-page">
 

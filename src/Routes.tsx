@@ -10,8 +10,8 @@ function Routes() {
   return (
     <BrowserRouter >
       <Switch>
-        <Route path="/" component={HomePage} exact/>
         <Route path="/menu" component={PrintMenuPage} exact/>
+        <Route path="/" component={HomePage} exact/>
         <Route path="/combo" component={ComboPage} exact />
         <Route path="/:name" component={LunchesPage} exact />
         <Route path="/combo/:id" component={PortionsPage} />

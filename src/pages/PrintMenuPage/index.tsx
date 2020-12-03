@@ -30,89 +30,20 @@ function PrintMenuPage() {
 
 
   return (
-
-    <div id="menu">
-
+    <div id="print-page">
 
       <div className="page">
-        {
-          menu.map((itemMenu: any) => {
-            return (
-              <div className="print" key={itemMenu.type}>
 
-                <div className="top">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et autem ipsam sint? Modi quam nesciunt, quaerat nam debitis quisquam, vel earum, repellat atque ut nemo a assumenda non illo aliquam.</p>
 
-                  <div className="bg"></div>
+      </div>
 
-                  <img src="https://www.fogaocaseiro.com.br/static/media/logo.949d0a6c.png" alt="" />
+      <div className="page">
 
-                  <a href="https://www.instagram.com/fogaocaseirooficial/" target="blank">
-                    <div className="social-item">
-                      <FaInstagram />
-                      <strong>{db.info.contact[1]}</strong>
-                    </div>
-                  </a>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et autem ipsam sint? Modi quam nesciunt, quaerat nam debitis quisquam, vel earum, repellat atque ut nemo a assumenda non illo aliquam.</p>
 
-                </div>
+      </div>
 
-                <div className="title">
-                  <div className="title-left" >
-                    <div className="icon">
-                      <FaListUl />
-                    </div>
-
-                    <div className="infos">
-                      <strong>{itemMenu.type}</strong>
-                      <p>{itemMenu.info}</p>
-                    </div>
-                  </div>
-
-                  <div className="left">
-                    <div className="info-item">
-                      <span>Encomendas</span>
-                      <p>{db.info.order[0]}</p>
-                      <p>{db.info.order[1]}</p>
-                    </div>
-                  </div>
-
-                  <div className="right">
-                    <div className="info-item">
-                      <span>Entregas</span>
-                      <p>{db.info.delivery[0]}</p>
-                      <p>{db.info.delivery[1]}</p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div className="list">
-
-                  <ul className="list-wrapper">
-
-                    {
-                      itemMenu.items.map((item: any) => {
-                        return (
-                          <li className="list-item" key={item.id}>
-                            <div className="item-title">
-                              <strong>{item.id}</strong> - {item.name}
-                            </div>
-
-                            <div className="price">
-                              {Utils.numberToCurrencyBRL(item.sale)}
-                            </div>
-                          </li>
-                        )
-                      })
-                    }
-
-                  </ul>
-
-                </div>
-              </div>
-            )
-          })
-        }
-      </div >
     </div>
   )
 }
