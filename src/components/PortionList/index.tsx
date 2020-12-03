@@ -25,8 +25,8 @@ const PortionList: React.FC<PortionListProps> = ({ portion, amount, setAmount, t
           <p>Escolha {portion.choice_amount} {portion.choice_amount > 1 ? 'porções' : 'porção'}</p>
         </div>
         <div className="right">
-          <span>{portionAmount}/{portion.choice_amount}</span>
-          <span>obrigatório</span>
+          {/* <span>{portionAmount}/{portion.choice_amount}</span>
+          <span>obrigatório</span> */}
         </div>
       </div>
 
