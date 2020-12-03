@@ -15,7 +15,7 @@ function Routes() {
         <Route path="/combo/:id" component={PortionsPage} />
       </Switch>
       <Route path='/menu' component={() => {
-        window.location.href = 'https://fogaocaseiro.com.br/menu';
+        window.location.href = 'https://fogao-caseiro-front-git-main-printmenu.cesardmn.vercel.app/menu';
         return null;
       }} />
     </BrowserRouter>
