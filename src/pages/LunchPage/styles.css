@@ -1,0 +1,100 @@
+.lunch-content {
+  height: 100vh;
+  width: 100%;
+  min-width: 320px;
+  position: relative;
+}
+
+.lunch-content .top {
+  height: 10vh;
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background-white);
+  border-bottom: 1px solid var(--color-complementary-light);
+  position: sticky;
+  top: 0;
+}
+
+.lunch-content .top .back-icon {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.lunch-content .top .title {
+  color: var(--color-primary);
+}
+
+.lunch-content .bottom {
+  height: 10vh;
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--color-background-white);
+  border-bottom: 1px solid var(--color-complementary-light);
+}
+
+.lunch-content .bottom button {
+  height: 5vh;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow-black);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-text-white); 
+}
+
+.lunch-content .bottom button .total {
+  margin-right: 1rem; 
+}
+
+.lunch-content .bottom .amount {
+  height: 5vh;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow-black);
+  background-color: var(--color-complementary-light);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+
+.lunch-content .lunches-list {
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.lunch-content .lunches-list .lunch-list .top {
+  height: 10vh;
+  background-color: var(--color-complementary-light);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+@media (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .lunch-content {
+    height: 100vh;
+    width: 700px;
+  }
+}

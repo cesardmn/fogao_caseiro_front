@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import LoadingPage from './pages/LoadingPage';
 import Routes from './Routes'
 import api from './services/api';
-import LoadingPage from './pages/LoadingPage';
+import DB from './services/DB';
 
 function App() {
 
@@ -9,9 +10,7 @@ function App() {
 
   useEffect(() => {
     api.get('').then(response => {
-      const fcdb = JSON.stringify(response.data)
-      localStorage.setItem("fcdb", fcdb)
-
+      DB.setDB(response.data)
       setIsLoading(false)
 
     })

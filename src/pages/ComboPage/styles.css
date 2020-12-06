@@ -1,0 +1,52 @@
+.combo-page {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 65vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
+}
+
+.combo-page .about {
+  /* width: 90vw; */
+  min-width: 320px;
+  max-width: 700px;
+  display: flex;
+  margin-top: 2rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  line-height: 2.5rem;
+  color: var(--color-complementary);
+  box-shadow: var(--box-shadow-black);
+}
+
+.combo-page .about p {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.combo-page .about p:last-child {
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  .combo-page .about {
+    display: none;
+  }
+  
+  .combo-page .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap ;
+    width: 100%;
+  }
+}

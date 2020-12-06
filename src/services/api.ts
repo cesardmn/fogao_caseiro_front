@@ -1,9 +1,9 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:'https://script.google.com/macros/s/AKfycbxUSP-KtqvhWm2AmMIrixR6oHDVVFvn2tuYYsgqZso1qQUfEp0/exec',
-  // baseURL: 'https://backfc.herokuapp.com',
-  // baseURL: 'http://127.0.0.1:8000' 
+  // baseURL: 'http://127.0.0.1:8000/infos',
+  // baseURL: 'https://backfc.herokuapp.com/infos',
+  baseURL: 'https://script.google.com/macros/s/AKfycbxt0ZoyKJtHLKyqE7YM0tJtGvji_al0LT_wNfNH1Q5EN-dPkRc/exec'
 })
 
 export default api

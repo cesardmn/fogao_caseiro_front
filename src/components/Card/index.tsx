@@ -1,9 +1,16 @@
 import React from 'react'
-import { FaCarrot, FaDrumstickBite, FaListOl, FaUtensils } from 'react-icons/fa'
+import { FaCarrot, FaDrumstickBite, FaUtensils, FaListUl } from 'react-icons/fa'
 
 import './styles.css'
 
-const Card: React.FC<CardProps> = ({ type, title, subtitle, loading, children }) => {
+interface CardProps {
+  type: string,
+  title: string,
+  subtitle: string,
+  loading?: boolean
+}
+
+const Card: React.FC<CardProps> = ({ type, title, subtitle, children, loading }) => {
   return (
     <div className="card">
 
@@ -27,10 +34,9 @@ const Card: React.FC<CardProps> = ({ type, title, subtitle, loading, children })
 
           {
             type === 'porcoes' &&
-            <FaListOl />
+            <FaListUl />
           }
         </div>
-
 
         <div>
           <strong>{title}</strong>
@@ -54,5 +60,3 @@ const Card: React.FC<CardProps> = ({ type, title, subtitle, loading, children })
 }
 
 export default Card
-
-

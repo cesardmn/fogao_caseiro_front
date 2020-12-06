@@ -1,75 +1,66 @@
-.item-card {
-  height: 10vh;
-  flex-direction: row;
-  align-items: center;
+.item {
+  height: 12vh;
+  width: 100%;
+  min-width: 320px;
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: 0 2rem;
-  color: var(--color-complementary-dark);
+  background-color: var(--color-background-white);
   border-bottom: 1px solid var(--color-complementary-light);
 }
 
-.item-card .card-description {
+.item .description {
+  width: 75%;
   height: 100%;
-  width: 70%;
-  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-}
-
-
-.item-card .card-description .name {
-  flex-direction: row;
   font-size: 1.3rem;
+  padding-left: 0.5rem;
+  color: var(--color-complementary);
 }
 
-.item-card .card-description .name strong {
-  margin-right: 0.4rem;
+.item .description strong {
+  color: var(--color-secondary);
 }
 
-.item-card .card-description .price {
-  flex-direction: row;
-  align-items: baseline;
-}
-
-.item-card .card-description .price .sale {
-  font-size: 1.3rem;
+.item .description .price .sale {
   color: var(--color-success);
+  font-size: 1.5rem;
   margin-right: 0.5rem;
 }
 
-.item-card .card-description .price .full {
+.item .description .price .full {
+  font-size: 1.1rem;
+  font-weight: 200;
   text-decoration: line-through;
+  color: var(--color-complementary-dark);
 }
 
-
-.item-card .card-controls {
-  height: 50px;
-  width: 100px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-
-  border: 1px solid var(--color-complementary-light);
-  border-radius: 0.5rem;
-}
-
-.item-card .card-controls button {
+.item .controls {
   height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-secondary);
-  font-weight: bold;
-  background-color: initial;
-  cursor: pointer;
+  padding: 1.5rem.5rem;
+  width: 25%;
 }
 
-.item-card .card-controls span {
+.item .controls .wrapper {
   height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  border: 1px solid var(--color-complementary-light);
+  border-radius: 0.5rem;
   font-size: 1.5rem;
-  font-weight: bold;
-  
+  color: var(--color-complementary);
+}
+
+.item .controls .wrapper button {
+  height: 100%;
+  width: 30%;
+  background-color: inherit;
+  color: var(--color-secondary);
+  font-weight: 600;
+  font-size: 2rem;
+  outline: 0;
 }
