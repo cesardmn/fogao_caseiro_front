@@ -71,6 +71,8 @@ const LunchesPage = () => {
         </button>
       </div> */}
 
+      <span>Escolha no mínimo 5 opções entre Fit e Low Carb</span>
+
       <div className="lunches-list">
         {
           lunches.map((lunch, index) => {
