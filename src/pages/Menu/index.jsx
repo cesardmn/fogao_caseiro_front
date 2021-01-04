@@ -23,8 +23,6 @@ export default function Menu() {
 
   const data = db.getDB()
 
-  console.log(data)
-
   function getGroupNames() {
     const set = new Set()
 

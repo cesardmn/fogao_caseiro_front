@@ -12,16 +12,13 @@ function App() {
 
   useEffect(() => {
     api.get('/items').then(response => {
-      console.log(response.data);
       db.setDB(response.data)
       setIsLoading(false)
 
     })
   }, [])
 
-  return isLoading ?  <Skeleton /> : <Routes />
-
-  // <Routes /> <Skeleton />
+  return isLoading ? <Skeleton /> : <Routes />
 
 }
 

@@ -71,7 +71,7 @@ export default function Menu() {
 
                         <Grid item xs={12}>
                           <Typography component="p">
-                            <Skeleton animation="wave"/>
+                            <Skeleton animation="wave" />
                           </Typography>
                         </Grid>
 
@@ -83,7 +83,7 @@ export default function Menu() {
 
                         <Grid item xs={12}>
                           <Typography component="p">
-                            <Skeleton animation="wave"/>
+                            <Skeleton animation="wave" />
                           </Typography>
                         </Grid>
 
