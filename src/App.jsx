@@ -3,12 +3,9 @@ import Routes from './Routes'
 import api from './services/api'
 import db from './utils/db'
 
-import Skeleton from './components/Skeleton';
-
-
 function App() {
 
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   // useEffect(() => {
   //   api.get('/items').then(response => {
@@ -18,7 +15,9 @@ function App() {
   //   })
   // }, [])
 
-  return isLoading ? <Skeleton /> : <Routes />
+  // return isLoading ? <h1>Loading</h1> : <Routes />
+
+  return <Routes />
 
 }
 
