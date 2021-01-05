@@ -12,6 +12,7 @@ import db from '../../utils/db'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    margin: 0,
   },
   paper: {
     padding: theme.spacing(1),

@@ -3,18 +3,16 @@ import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 
-import Header from '../../components/Header'
-import Tabs from '../../components/Tabs'
-
-import db from '../../utils/db'
-
 function ElevationScroll(props) {
   const { children, window } = props;
-
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -28,35 +26,25 @@ function ElevationScroll(props) {
 
 ElevationScroll.propTypes = {
   children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
   window: PropTypes.func,
 };
 
-
-const data = db.getDB()
-
-function getGroupNames() {
-  const set = new Set()
-
-  for (let item of data) {
-    set.add(item.group.name)
-  }
-  return [...set]
-}
-
-const itemsNames = getGroupNames()
-
-export default function Home(props) {
+export default function ElevateAppBar(props) {
   return (
     <React.Fragment>
       <ElevationScroll {...props}>
-        <AppBar >
-          <Header />
+        <AppBar>
+
         </AppBar>
       </ElevationScroll>
       <Toolbar />
+      <Container>
 
-      <Tabs items={data} itemsNames={itemsNames} />
-
+      </Container>
     </React.Fragment>
-  )
+  );
 }

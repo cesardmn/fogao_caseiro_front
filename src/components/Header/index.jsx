@@ -1,27 +1,36 @@
-import { Container, Logo, Info } from './styles'
+import { MenuHeader, SocialIcons } from './styles'
 
-export default function Header() {
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import InstagramIcon from '@material-ui/icons/Instagram';
+
+export default function Menu() {
+
   return (
-    <header>
-      <Container >
-        <Logo >
-          <div>
-            <h3>Fogão Caseiro</h3>
-            <span>cozinha brasileira</span>
-          </div>
-        </Logo>
+    <MenuHeader >
+      <div className="bg"></div>
 
-        <Info >
-          <h1>teste</h1>
+      <img src="https://www.fogaocaseiro.com.br/imgs/logo.png" alt="" />
 
-        </Info>
 
-        <Info >
-          <h1>teste</h1>
+      <SocialIcons >
+        <ul>
+          <a href="https://wa.me/5521999374814" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
 
-        </Info>
+            <li>
+              <WhatsAppIcon />
+              <span>(21) 999 37 48 14</span>
+            </li>
+          </a>
 
-      </Container>
-    </header>
+          <a href="https://www.instagram.com/fogaocaseirooficial/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+
+            <li>
+              <InstagramIcon />
+              <span>@fogaocaseirooficial</span>
+            </li>
+          </a>
+        </ul>
+      </SocialIcons>
+    </MenuHeader>
   )
 }
