@@ -1,12 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Menu from './pages/Menu'
+import Home from './pages/Home'
 
 export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Menu} exact/>
-        <Route path="/menu" component={Menu} />
+        <Route path="/" component={Home} exact />
       </Switch>
     </BrowserRouter>
   )
