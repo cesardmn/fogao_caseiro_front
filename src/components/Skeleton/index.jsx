@@ -71,13 +71,13 @@ export default function Menu() {
 
                         <Grid item xs={12}>
                           <Typography component="p">
-                            <Skeleton animation="wave" />
+                            <Skeleton />
                           </Typography>
                         </Grid>
 
                         <Grid item xs={12}>
                           <Typography component="p">
-                            <Skeleton />
+                            <Skeleton animation={false} />
                           </Typography>
                         </Grid>
 

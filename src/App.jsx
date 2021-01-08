@@ -8,15 +8,15 @@ import Skeleton from './components/Skeleton';
 
 function App() {
 
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
-  // useEffect(() => {
-  //   api.get('/items').then(response => {
-  //     db.setDB(response.data)
-  //     setIsLoading(false)
+  useEffect(() => {
+    api.get('/items').then(response => {
+      db.setDB(response.data)
+      setIsLoading(false)
 
-  //   })
-  // }, [])
+    })
+  }, [])
 
   return isLoading ? <Skeleton /> : <Routes />
 
