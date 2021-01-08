@@ -45,28 +45,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(6),
   },
-  logo: {
-    height: 250,
-    marginTop: 35,
-    marginBottom: 25,
-    zIndex: 2,
-  },
   appBar: {
     backgroundImage: `url(${bgImg})`,
     backgroundSize: 'cover',
     height: 65,
     backgroundColor: 'inherit'
   },
+  logo: {
+    // height:'20%',
+    width: '5%',
+  },
   slogan: {
     fontSize: 20,
-    marginBottom: 60,
+    // marginBottom: 60,
   },
-  container: {
-    // border: '1px solid black',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  }
+
 }));
 
 
@@ -79,25 +72,9 @@ export default function Album() {
 
 
       <AppBar position="fixed" className={classes.appBar} >
-        {/* <Toolbar> */}
 
-        <Container maxWidth="sm" className={classes.container} >
-          <IconButton >
-            <HomeIcon className={classes.icon} />
-          </IconButton>
-
-          <Typography variant="h5" component="h1" >
-            {/* Fogão Caseiro */}
-            </Typography>
-
-
-
-          <IconButton >
-            <ShoppingCartIcon className={classes.icon} />
-          </IconButton>
-        </Container>
-
-        {/* </Toolbar> */}
+          <img src={logoImg} alt="logo" className={classes.logo} />
+    
       </AppBar>
 
 
@@ -108,36 +85,9 @@ export default function Album() {
         <div className={classes.heroContent}>
           <Container maxWidth="sm" >
 
-
-            <Grid container spacing={1} justify="center" >
-              <img src={logoImg} alt="Fogão Caseiro logo" className={classes.logo} />
-            </Grid>
-
-
-
             <Typography variant="h5" align="center" color="textSecondary" paragraph className={classes.slogan} >
               A solução para quem não tem tempo de cozinhar, mas gosta de boa comida em sua mesa.
             </Typography>
-
-
-            <div className={classes.heroButtons}>
-              <Grid container spacing={2} justify="center">
-                <Grid item>
-
-                  <Button variant="contained" color="primary">
-                    <WhatsAppIcon />
-                    WhatsApp
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="secondary">
-                    <InstagramIcon />
-                    Instagram
-                  </Button>
-                </Grid>
-              </Grid>
-            </div>
-
 
           </Container>
         </div>
@@ -145,7 +95,6 @@ export default function Album() {
 
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            <CardP />
             <CardP />
             <CardP />
             <CardP />
