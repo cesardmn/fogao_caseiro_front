@@ -5,10 +5,19 @@ export default function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Menu} exact/>
         <Route path="/menu" component={Menu} />
+
+        <Route path='/' component={() => {
+          window.location.href = '/menu';
+          return null;
+        }} exact />
+
+        <Route path='/admin' component={() => {
+          window.location.href = 'https://backfc.herokuapp.com/admin';
+          return null;
+        }} />
+        
       </Switch>
     </BrowserRouter>
   )
 }
-

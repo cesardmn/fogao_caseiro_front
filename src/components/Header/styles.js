@@ -1,37 +1,63 @@
 import styled from 'styled-components'
 
-export const Container = styled.header`
+export const MenuHeader = styled.header`
   height: 10vh;
-  width: 100vw;
-  border: 2px solid black;
+  width: 100%;
   display: flex;
-  align-items: center;
+  position: relative;
+
+  border-bottom: 1px solid grey;
+
+  .bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-image: url('https://www.fogaocaseiro.com.br/imgs/bg.png');
+    background-size: cover;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+  }
+
+  img {
+    height: 100%;
+    width:20%;
+    object-fit: contain;
+  }
 `
 
-export const Logo = styled.div`
-  div {
-    height: 10vh;
-    width:30%;
+export const SocialIcons = styled.div`
+
+  height: 100%;
+  width: 80%;
+
+  /* padding: 0.5rem; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+
+  color: white;
+
+  ul {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content:center;
-    padding:0.5rem; 
   }
-  h3 {
-    font-family: 'Dancing Script', cursive;
-    color: #046d32;
-    margin:0;
+
+  li {
+    height:100%;
+    width:100%;
+    display: flex;
+    margin-top: 0.4rem;
+    color: white;
   }
 
   span {
-    font-size: 8px;
-    color: #ff5700;
+    margin-left: 0.5rem;
   }
 
-`
-export const Info = styled.div`
-  height: 100%;
-  width: 35%;
-  border: 2px solid orange;
 `
