@@ -18,15 +18,26 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '56.25%', // 16:9
   },
   title: {
-    color: theme.palette.secondary.main
+    color: theme.palette.primary.main,
   },
   subtitle: {
     color: 'gray',
     marginLeft: 4,
   },
+  description: {
+    color: 'grey'
+  },
   content: {
     flexGrow: 1,
   },
+  typeText :{
+    color: theme.palette.secondary.light,
+    marginBottom:10,
+    fontSize:'14px'
+  },
+  cardButtom: {
+    color: theme.palette.secondary.main,
+  }
 }));
 
 
@@ -56,11 +67,7 @@ export default function GroupCard({ group }) {
             </Grid>
           </Grid>
 
-          <Typography>
-            {group.description}
-          </Typography>
-
-          {/* <Typography >
+          <Typography className={classes.typeText} >
             {
               group.types.map(type => {
                 return (
@@ -68,18 +75,20 @@ export default function GroupCard({ group }) {
                 )
               })
             }
-          </Typography> */}
+          </Typography>
+
+          <Typography  >
+            {group.description}
+          </Typography>
 
         </CardContent>
 
-        {/* <CardActions>
-          <Button size="small" color="primary">
-            View
-                    </Button>
-          <Button size="small" color="primary">
-            Edit
-                    </Button>
-        </CardActions> */}
+        <CardActions >
+          <Button size="small" color="secondary">
+            ver mais ...
+         </Button>
+
+        </CardActions>
 
       </Card>
     </Grid>
