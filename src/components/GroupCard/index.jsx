@@ -7,6 +7,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
+import ItemChoice from '../../pages/ItemChoice'
+
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -35,9 +37,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom:10,
     fontSize:'14px'
   },
-  cardButtom: {
-    color: theme.palette.secondary.main,
-  }
 }));
 
 
@@ -84,10 +83,7 @@ export default function GroupCard({ group }) {
         </CardContent>
 
         <CardActions >
-          <Button size="small" color="secondary">
-            ver mais ...
-         </Button>
-
+         <ItemChoice group={group} />
         </CardActions>
 
       </Card>
