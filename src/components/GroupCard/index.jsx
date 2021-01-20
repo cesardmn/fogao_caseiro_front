@@ -1,4 +1,3 @@
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -8,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
 import ItemChoice from '../../pages/ItemChoice'
-
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -32,13 +30,17 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
   },
-  typeText :{
+  types: {
     color: theme.palette.secondary.light,
-    marginBottom:10,
-    fontSize:'14px'
+    marginBottom: 10,
+    // border: '1px solid black',
+    height: 40,
   },
+  typeText: {
+    marginRight: 10,
+    fontSize: '14px',
+  }
 }));
-
 
 export default function GroupCard({ group }) {
 
@@ -55,9 +57,10 @@ export default function GroupCard({ group }) {
         />
 
         <CardContent className={classes.content}>
-          <Grid container spacing={0} alignItems="flex-end">  
+
+          <Grid container spacing={0} alignItems="flex-end">
             <Grid container direction="row" alignItems="baseline" >
-              <Typography  variant="h6" component="h2" className={classes.title}>
+              <Typography variant="h6" component="h2" className={classes.title}>
                 {group.name}
               </Typography>
               <Typography variant="caption" className={classes.subtitle}>
@@ -66,15 +69,16 @@ export default function GroupCard({ group }) {
             </Grid>
           </Grid>
 
-          <Typography className={classes.typeText} >
+          <Grid container className={classes.types}>
             {
               group.types.map(type => {
                 return (
-                  <><span>{type}</span> <span> . </span>  </>
+                  <Grid item key={type} className={classes.typeText} >{type}</Grid>
                 )
               })
             }
-          </Typography>
+          </Grid>
+
 
           <Typography  >
             {group.description}
@@ -83,7 +87,7 @@ export default function GroupCard({ group }) {
         </CardContent>
 
         <CardActions >
-         <ItemChoice group={group} />
+          <ItemChoice group={group} />
         </CardActions>
 
       </Card>
