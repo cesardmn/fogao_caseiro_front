@@ -9,7 +9,6 @@ import Grid from '@material-ui/core/Grid';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
-import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
 
 import bgImg from '../../assets/media/bg.png'
@@ -34,13 +33,18 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${bgImg})`,
     backgroundSize: 'cover',
     height: 110,
+    width: '100%',
     backgroundColor: 'inherit',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   grid: {
+    height: 110,
     maxWidth: '600px',
     minWidth: '340px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   logo: {
     height: 110
@@ -65,23 +69,18 @@ export default function PageDefault({ children }) {
     <React.Fragment>
 
       <ElevationScroll >
-        <AppBar className={classes.appBar} alignItems="center">
-
+        <AppBar className={classes.appBar} >
           <Grid
             container
-            justify="space-between"
-            alignItems="stretch"
             className={classes.grid}
-          >
+            direction="row">
 
-            <Grid item xs={4} >
+            <Grid item xs={4}>
               <img src={logoImg} alt="" className={classes.logo} />
             </Grid>
 
-            <Grid container xs={8} alignItems="center" >
-
-              <Breadcrumbs aria-label="breadcrumb" separator="">
-
+            <Grid item xs={8}>
+              <Grid container justify="space-evenly" >
                 <Link
                   href="https://wa.me/5521999374814"
                   target="blank"
@@ -92,18 +91,17 @@ export default function PageDefault({ children }) {
                    (21) 999 37 48 14
                 </Link>
 
-                <Link 
-                  href="https://www.instagram.com/fogaocaseirooficial" 
-                  target="blank" 
-                  rel="noopener noreferrer" 
+                <Link
+                  href="https://www.instagram.com/fogaocaseirooficial"
+                  target="blank"
+                  rel="noopener noreferrer"
                   className={classes.social}
                 >
                   <InstagramIcon className={classes.icon} />
                     @fogaocaseirooficial
                 </Link>
 
-              </Breadcrumbs>
-
+              </Grid>
             </Grid>
 
           </Grid>

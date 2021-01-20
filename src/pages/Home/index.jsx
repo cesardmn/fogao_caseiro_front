@@ -18,23 +18,21 @@ const useStyles = makeStyles((theme) => ({
 export default function Home() {
 
   const classes = useStyles();
-  
+
   const groups = db.getGroups()
 
   return (
     <PageDefault >
       <main>
-        <Container className={classes.cardGrid} maxWidth="md">
-          <Grid container spacing={4}>
-
+        <Container className={classes.cardGrid} maxWidth="md"  >
+          <Grid container spacing={4} justify="center" >
             {
-              groups.map(group => {
+              groups.map((group, index) => {
                 return (
-                  <GroupCard group={group} key={group.id} />
+                  <GroupCard group={group} key={index} />
                 )
               })
             }
-
           </Grid>
         </Container>
       </main>
