@@ -2,20 +2,36 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import TypeList from '../../components/TypeList'
+import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import { Typography } from '@material-ui/core';
+
+import bgImg from '../../assets/media/bg.png'
+
+const useStyles = makeStyles((theme) => ({
+  requiredDisplay: {
+    backgroundColor: theme.palette.secondary.dark,
+    color: 'white',
+    fontSize: '14px',
+    padding: 5,
+  },
+  bg: {
+    backgroundImage: `url(${bgImg})`,
+    backgroundSize: 'cover',
+    color: 'white',
+    overflow: 'hidden',
+  },
+}))
 
 export default function ItemChoice({ group }) {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const typesNames = group.types
-
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -24,6 +40,8 @@ export default function ItemChoice({ group }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const classes = useStyles();
 
   return (
     <div>
@@ -37,15 +55,35 @@ export default function ItemChoice({ group }) {
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title">
 
-        <DialogTitle id="responsive-dialog-title">
-          {group.name}
+        <DialogTitle id="responsive-dialog-title" className={classes.bg} >
+          <Grid container justify="space-between" alignItems="center"
+          >
+            <Grid item >
+              {group.name}
+            </Grid>
+            <Grid item>
+              <Paper className={classes.requiredDisplay}>
+                <Typography variant="subtitle1" >
+                  mínimo {group.min_order} unidades.
+                </Typography>
+              </Paper>
+            </Grid>
+          </Grid>
         </DialogTitle>
 
-        {/* <DialogContent> */}
-          <TypeList group={group} />
-        {/* </DialogContent> */}
+        <TypeList group={group} />
 
         <DialogActions>
+          {/* <Button variant="outlined">
+            <Grid container >
+              <Grid item justify="space-between" >
+                <Typography variant="caption" >R$ 0,00</Typography>
+              </Grid>
+              <Grid item >
+                <Typography > Adicionar</Typography>
+              </Grid>
+            </Grid>
+          </Button> */}
           <Button autoFocus onClick={handleClose} color="primary">
             Disagree
           </Button>
@@ -53,8 +91,7 @@ export default function ItemChoice({ group }) {
             Agree
           </Button>
         </DialogActions>
-
       </Dialog>
-    </div>
+    </div >
   );
 }
